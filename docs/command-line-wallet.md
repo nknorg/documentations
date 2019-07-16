@@ -5,27 +5,28 @@ title: Command Line Wallet
 
 nknc is a command line tool for nknd.
 
-## Contents
-1. [help](#help)
-2. [version](#version)
-3. [info](#info)
-3.1  [query_block](#query_block)
-3.2  [query_transaction](#query_transaction)
-3.3  [get_current_blockhash](#get_current_blockhash)
-3.4  [get_block_amount](#get_block_amount)
-3.5  [get_connection_infomation](#get_connection_infomation)
-3.6  [get_state](#get_state)
-3.7  [get_neighbors](#get_neighbors)
-3.8  [get_chord_ring_information](#get_chord_ring_information)
-3.9  [get_version_of_a_node](#get_version_of_node)
-3.10 [get_balance](#get_balance)
-3.11 [get_nonce](#get_nonce)
-4. [asset](#asset)
-4.1 [transfer_asset](#transfer_asset)
-5. [wallet](#wallet)
-5.1 [create_wallet](#create_wallet)
-5.2 [query_wallet](#query_wallet)
-5.3 [change_password](#change_password)
+## Table of Contents
+- [help](#help)
+- [version](#version)
+- [info](#info)
+  * [query_block](#query_block)
+  * [query_transaction](#query_transaction)
+  * [get_current_blockhash](#get_current_blockhash)
+  * [get_block_amount](#get_block_amount)
+  * [get_connection_infomation](#get_connection_infomation)
+  * [get_state](#get_state)
+  * [get_neighbors](#get_neighbors)
+  * [get_chord_ring_information](#get_chord_ring_information)
+  * [get_version_of_a_node](#get_version_of_node)
+  * [get_balance](#get_balance)
+  * [get_nonce](#get_nonce)
+- [asset](#asset)
+  * [transfer_asset](#transfer_asset)
+- [wallet](#wallet)
+  * [create_wallet](#create_wallet)
+  * [query_wallet](#query_wallet)
+  * [change_password](#change_password)
+
 
 ## help
 

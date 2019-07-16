@@ -23,7 +23,6 @@ Here are some APIs to communicate with blockchain. These APIs are Compatible wit
 	* [getnodestate](#getnodestate)
 	* [getchordringinfo](#getchordringinfo)
 
-## Details  
 
 ## usage
 

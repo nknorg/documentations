@@ -5,22 +5,21 @@ title: Websocket API Reference
 
 Here are some APIs to communicate with blockchain.
 
-## Contents
-1. [usage](#usage)
-2. [error codes](#errcode)
-3. [APIs](#apis)
+## Table of Contents
+- [usage](#usage)
+- [error codes](#errcode)
+- [APIs](#apis)
 	* [getlatestblockheight](#getlatestblockheight)
 	* [getblock](#getblock)
 	* [getconnectioncount](#getconnectioncount)
 	* [gettransaction](#gettransaction)
 	* [heartbeat](#heartbeat)
 	* [getsessioncount](#getsessioncount)
-4. [notice](#notice)
+- [notice](#notice)
 	* [updateSigChainBlockHash](#updateSigChainBlockHash)
 
-## Details
 
-<h3 id="usage">1. usage</h3>
+## usage
 
 A typical Web request format and a typical response format could be as following:
 
@@ -55,7 +54,7 @@ The syntax '-->' indicates data sent to Server, and '<--' indicates data sent to
 ```
 
 
-<h3 id="errcode">2. error codes</h3>
+## error codes
 
 | code  | message              | description |
 |-------|----------------------|-------------|
@@ -79,9 +78,9 @@ The syntax '-->' indicates data sent to Server, and '<--' indicates data sent to
 | 45001 |"INTERNAL ERROR"      | -           |
 | 47001 |"SMARTCODE EXEC ERROR"| -           |
 
-<h3 id="apis">3. APIs</h3>
+## APIs
 
-* <h4 id="getlatestblockheight">getlatestblockheight</h4>
+### getlatestblockheight
 
 Get the height of current block.
 
@@ -98,7 +97,7 @@ Get the height of current block.
 	}
 ```
 
-* <h4 id="getblock">getblock</h4>
+### getblock
 
 Get the block information by height or hash.
 
@@ -133,7 +132,7 @@ or
 	}
 ```
 
-* <h4 id="getconnectioncount">getconnectioncount</h4>
+### getconnectioncount
 
 Get the connection amount to this node. 
 
@@ -150,7 +149,7 @@ Get the connection amount to this node.
 	}
 ```
 
-* <h4 id="gettransaction">gettransaction</h4>
+### gettransaction
 
 Get a transaction by hash.
 
@@ -168,7 +167,7 @@ Get a transaction by hash.
 	}
 ```
 
-* <h4 id="heartbeat">heartbeat</h4>
+### heartbeat
 
 heart beat.
 
@@ -185,7 +184,7 @@ heart beat.
 	}
 ```
 
-* <h4 id="getsessioncount">getsessioncount</h4>
+### getsessioncount
 
 Get session amount of websocket.
 
@@ -203,7 +202,9 @@ Get session amount of websocket.
 	}
 ```
 
-* <h4 id="updateSigChainBlockHash">updateSigChainBlockHash</h4>
+## notice
+
+### updateSigChainBlockHash
 
 Update sigchain block hash.
 
