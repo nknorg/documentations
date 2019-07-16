@@ -5,10 +5,10 @@ title: JsonRPC API Reference
 
 Here are some APIs to communicate with blockchain. These APIs are Compatible with [JSON-RPC 2.0](https://www.jsonrpc.org/specification).
 
-## Contents
-1. [usage](#usage)
-2. [error codes](#errcode)
-3. [APIs](#apis)
+## Table of Contents
+- [usage](#usage)
+- [error codes](#error-codes)
+- [APIs](#apis)
 	* [getlatestblockheight](#getlatestblockheight)
 	* [getlatestblockhash](#getlatestblockhash)
 	* [getblockcount](#getblockcount)
@@ -25,7 +25,7 @@ Here are some APIs to communicate with blockchain. These APIs are Compatible wit
 
 ## Details  
 
-<h3 id="usage">1. usage</h3>
+## usage
 
 A typical RPC request format and a typical response format could be as following:
 
@@ -63,7 +63,7 @@ The syntax '-->' indicates data sent to Server, and '<--' indicates data sent to
 	}
 ```
 
-<h3 id="errcode">2. error codes</h3>
+## error codes
 
 | code  | message              | description |
 |-------|----------------------|-------------|
@@ -87,9 +87,9 @@ The syntax '-->' indicates data sent to Server, and '<--' indicates data sent to
 |-45001 |"INTERNAL ERROR"      | -           |
 |-47001 |"SMARTCODE EXEC ERROR"| -           |
 
-<h3 id="apis">3. APIs</h3>
+## APIs
 
-* <h4 id="getlatestblockheight">getlatestblockheight</h4>
+### getlatestblockheight
 
 Get the height of current block.
 
@@ -107,7 +107,7 @@ Get the height of current block.
     }
 ```
 
-* <h4 id="getlatestblockhash">getlatestblockhash</h4>
+### getlatestblockhash
 
 Get the hash of current block.
 
@@ -125,7 +125,7 @@ Get the hash of current block.
 	}
 ```
 
-* <h4 id="getblockcount">getblockcount</h4>
+### getblockcount
 
 Get the block amount of blockchain.
 
@@ -143,7 +143,7 @@ Get the block amount of blockchain.
 	}
 ```
 
-* <h4 id="getblock">getblock</h4>
+### getblock
 
 Get the block information by height or hash.
 
@@ -176,7 +176,7 @@ or
 	}
 ```
 
-* <h4 id="getblocktxsbyheight">getblocktxsbyheight</h4>
+### getblocktxsbyheight
 
 Get the transactions hashes in a block by block height.
 
@@ -200,7 +200,7 @@ Get the transactions hashes in a block by block height.
 	}
 ```
 
-* <h4 id="getconnectioncount">getconnectioncount</h4>
+### getconnectioncount
 
 Get the connection amount to this node. 
 ```
@@ -217,7 +217,7 @@ Get the connection amount to this node.
 	}
 ```
 
-* <h4 id="getrawmempool">getrawmempool</h4>
+### getrawmempool
 
 Get all the transactions from transaction pool.
 ```
@@ -234,7 +234,7 @@ Get all the transactions from transaction pool.
 	}
 ```
 
-* <h4 id="gettransaction">gettransaction</h4>
+### gettransaction
 
 Get a transaction by hash.
 ```
@@ -251,7 +251,7 @@ Get a transaction by hash.
 	}
 ```
 
-* <h4 id="getwsaddr">getwsaddr</h4>
+### getwsaddr
 
 Get a websocket address.
 
@@ -269,7 +269,7 @@ Get a websocket address.
 	}
 ```
 
-* <h4 id="getversion">getversion</h4>
+### getversion
 
 Get version of this server.
 
@@ -287,7 +287,7 @@ Get version of this server.
 	}
 ```
 
-* <h4 id="getneighbor">getneighbor</h4>
+### getneighbor
 
 Get neighbor nodes of this server.
 
@@ -309,7 +309,7 @@ Get neighbor nodes of this server.
 	}
 ```
 
-* <h4 id="getnodestate">getnodestate</h4>
+### getnodestate
 
 Get net status of this server.
 
@@ -339,7 +339,7 @@ Get net status of this server.
 	}
 ```
 
-* <h4 id="getchordringinfo">getchordringinfo</h4>
+### getchordringinfo
 
 Get chord information of this server.
 
