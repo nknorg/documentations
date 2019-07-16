@@ -9,7 +9,7 @@
 // site configuration options.
 
 const siteConfig = {
-  title: 'NKN Documentations', // Title for your website.
+  title: 'NKN Docs', // Title for your website.
   tagline: 'A website for nkn online documentations',
   url: 'https://nknorg.github.io', // Your website URL
   baseUrl: '/documentations/', // Base URL for your project */
