@@ -57,29 +57,35 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Command Line Wallet</h1></header><article><div><span><p>nknc is a command line tool for nknd.</p>
-<h2><a class="anchor" aria-hidden="true" id="contents"></a><a href="#contents" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contents</h2>
-<ol>
+<h2><a class="anchor" aria-hidden="true" id="table-of-contents"></a><a href="#table-of-contents" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Table of Contents</h2>
+<ul>
 <li><a href="#help">help</a></li>
 <li><a href="#version">version</a></li>
 <li><a href="#info">info</a>
-3.1  <a href="#query_block">query_block</a>
-3.2  <a href="#query_transaction">query_transaction</a>
-3.3  <a href="#get_current_blockhash">get_current_blockhash</a>
-3.4  <a href="#get_block_amount">get_block_amount</a>
-3.5  <a href="#get_connection_infomation">get_connection_infomation</a>
-3.6  <a href="#get_state">get_state</a>
-3.7  <a href="#get_neighbors">get_neighbors</a>
-3.8  <a href="#get_chord_ring_information">get_chord_ring_information</a>
-3.9  <a href="#get_version_of_node">get_version_of_a_node</a>
-3.10 <a href="#get_balance">get_balance</a>
-3.11 <a href="#get_nonce">get_nonce</a></li>
+<ul>
+<li><a href="#query_block">query_block</a></li>
+<li><a href="#query_transaction">query_transaction</a></li>
+<li><a href="#get_current_blockhash">get_current_blockhash</a></li>
+<li><a href="#get_block_amount">get_block_amount</a></li>
+<li><a href="#get_connection_infomation">get_connection_infomation</a></li>
+<li><a href="#get_state">get_state</a></li>
+<li><a href="#get_neighbors">get_neighbors</a></li>
+<li><a href="#get_chord_ring_information">get_chord_ring_information</a></li>
+<li><a href="#get_version_of_node">get_version_of_a_node</a></li>
+<li><a href="#get_balance">get_balance</a></li>
+<li><a href="#get_nonce">get_nonce</a></li>
+</ul></li>
 <li><a href="#asset">asset</a>
-4.1 <a href="#transfer_asset">transfer_asset</a></li>
+<ul>
+<li><a href="#transfer_asset">transfer_asset</a></li>
+</ul></li>
 <li><a href="#wallet">wallet</a>
-5.1 <a href="#create_wallet">create_wallet</a>
-5.2 <a href="#query_wallet">query_wallet</a>
-5.3 <a href="#change_password">change_password</a></li>
-</ol>
+<ul>
+<li><a href="#create_wallet">create_wallet</a></li>
+<li><a href="#query_wallet">query_wallet</a></li>
+<li><a href="#change_password">change_password</a></li>
+</ul></li>
+</ul>
 <h2><a class="anchor" aria-hidden="true" id="help"></a><a href="#help" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>help</h2>
 <p>Get help for nknc.</p>
 <p>command:</p>
@@ -448,4 +454,4 @@ NKNZmZfWwYDhNGjFLZwJPQPKNf6o6kS45isW  044473fb05fc7a3c4c882150a02a505626a7531b1a
 <p>result:</p>
 <pre><code class="hljs"><span class="hljs-attribute">passwrod changed</span>
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentations/docs/websocket-api-reference"><span class="arrow-prev">← </span><span>Websocket API Reference</span></a><a class="docs-next button" href="/documentations/docs/consensus-and-blockchain"><span>Consensus and Blockchain</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#contents">Contents</a></li><li><a href="#help">help</a></li><li><a href="#version">version</a></li><li><a href="#info">info</a><ul class="toc-headings"><li><a href="#query_block">query_block</a></li><li><a href="#query_transaction">query_transaction</a></li><li><a href="#get_current_blockhash">get_current_blockhash</a></li><li><a href="#get_block_amount">get_block_amount</a></li><li><a href="#get_connection_infomation">get_connection_infomation</a></li><li><a href="#get_state">get_state</a></li><li><a href="#get_neighbors">get_neighbors</a></li><li><a href="#get_chord_ring_information">get_chord_ring_information</a></li><li><a href="#get_version_of_node">get_version_of_node</a></li><li><a href="#get_balance">get_balance</a></li><li><a href="#get_nonce">get_nonce</a></li></ul></li><li><a href="#asset">asset</a><ul class="toc-headings"><li><a href="#transfer_asset">transfer_asset</a></li></ul></li><li><a href="#wallet">wallet</a><ul class="toc-headings"><li><a href="#create_wallet">create_wallet</a></li><li><a href="#query_wallet">query_wallet</a></li><li><a href="#change_password">change_password</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><img src="/documentations/img/favicon.png" alt="Bowler" height="45"/><a href="https://nkn.org">NKN</a><a href="https://twitter.com/NKN_ORG">Twitter</a><a href="https://github.com/nknorg/nkn">GitHub</a><a href="https://forum.nkn.org">Forum</a></section><section class="copyright">Copyright © 2019 NKN | All rights reserved</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentations/docs/websocket-api-reference"><span class="arrow-prev">← </span><span>Websocket API Reference</span></a><a class="docs-next button" href="/documentations/docs/consensus-and-blockchain"><span>Consensus and Blockchain</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#table-of-contents">Table of Contents</a></li><li><a href="#help">help</a></li><li><a href="#version">version</a></li><li><a href="#info">info</a><ul class="toc-headings"><li><a href="#query_block">query_block</a></li><li><a href="#query_transaction">query_transaction</a></li><li><a href="#get_current_blockhash">get_current_blockhash</a></li><li><a href="#get_block_amount">get_block_amount</a></li><li><a href="#get_connection_infomation">get_connection_infomation</a></li><li><a href="#get_state">get_state</a></li><li><a href="#get_neighbors">get_neighbors</a></li><li><a href="#get_chord_ring_information">get_chord_ring_information</a></li><li><a href="#get_version_of_node">get_version_of_node</a></li><li><a href="#get_balance">get_balance</a></li><li><a href="#get_nonce">get_nonce</a></li></ul></li><li><a href="#asset">asset</a><ul class="toc-headings"><li><a href="#transfer_asset">transfer_asset</a></li></ul></li><li><a href="#wallet">wallet</a><ul class="toc-headings"><li><a href="#create_wallet">create_wallet</a></li><li><a href="#query_wallet">query_wallet</a></li><li><a href="#change_password">change_password</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><img src="/documentations/img/favicon.png" alt="Bowler" height="45"/><a href="https://nkn.org">NKN</a><a href="https://twitter.com/NKN_ORG">Twitter</a><a href="https://github.com/nknorg/nkn">GitHub</a><a href="https://forum.nkn.org">Forum</a></section><section class="copyright">Copyright © 2019 NKN | All rights reserved</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
