@@ -1,0 +1,23 @@
+{
+  "docs": {
+    "Home": [
+        "home", 
+        "introduction-to-nkn", 
+        "get-start", 
+        "nkn-client-protocol", 
+        "standard-json-format-wallat"],
+    "API Reference": [
+        "jsonrpc-api-reference", 
+        "websocket-api-reference", 
+        "command-line-wallet"],
+    "System Design": [
+        "consensus-and-blockchain",
+        "distributed-data-transmission-network",
+        "nkn-address-scheme",
+        "proof-of-relay", 
+        "relay-path-validation", 
+        "verifiable-random-function", 
+        "address-generation-theory"],
+    "FAQ": ["faq0"]
+  }
+}
