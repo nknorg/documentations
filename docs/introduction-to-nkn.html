@@ -1,0 +1,455 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Introduction to NKN · NKN Documentations</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;nkn-a-scalable-self-evolving-and-self-incentivized-decentralized-network&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#nkn-a-scalable-self-evolving-and-self-incentivized-decentralized-network&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;NKN: a Scalable Self-Evolving and Self-Incentivized Decentralized Network&lt;/h1&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Introduction to NKN · NKN Documentations"/><meta property="og:type" content="website"/><meta property="og:url" content="https://nknorg.github.io/documentations/"/><meta property="og:description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;nkn-a-scalable-self-evolving-and-self-incentivized-decentralized-network&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#nkn-a-scalable-self-evolving-and-self-incentivized-decentralized-network&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;NKN: a Scalable Self-Evolving and Self-Incentivized Decentralized Network&lt;/h1&gt;
+"/><meta property="og:image" content="https://nknorg.github.io/documentations/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://nknorg.github.io/documentations/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/documentations/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/documentations/js/scrollSpy.js"></script><link rel="stylesheet" href="/documentations/css/main.css"/><script src="/documentations/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/documentations/"><img class="logo" src="/documentations/img/favicon.png" alt="NKN Documentations"/><h2 class="headerTitleWithLogo">NKN Documentations</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/documentations/docs/home" target="_self">API</a></li><li class=""><a href="https://github.com/nknorg/nkn" target="_self">GitHub</a></li><li class=""><a href="https://nkn.org" target="_self">NKN</a></li><li class=""><a href="https://github.com/nknorg/nkn/wiki" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Home</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Home</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentations/docs/home">Welcome</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/documentations/docs/introduction-to-nkn">Introduction to NKN</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/get-start">Get Started</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/nkn-client-protocol">NKN Client Protocol</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/standard-json-format-wallat">Standard JSON-format Wallat</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API Reference</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentations/docs/jsonrpc-api-reference">JsonRPC API Reference</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/websocket-api-reference">Websocket API Reference</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/command-line-wallet">Command Line Wallet</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">System Design</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentations/docs/consensus-and-blockchain">Consensus and Blockchain</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/distributed-data-transmission-network">Distributed Data Transmission Network (DDTN)</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/nkn-address-scheme">NKN Address Scheme</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/proof-of-relay">Proof of Relay (PoR)</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/relay-path-validation">Relay Path Validation</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/verifiable-random-function">Verifiable Random Function</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/address-generation-theory">Address Generation Theory</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentations/docs/faq0">faq demo</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Introduction to NKN</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="nkn-a-scalable-self-evolving-and-self-incentivized-decentralized-network"></a><a href="#nkn-a-scalable-self-evolving-and-self-incentivized-decentralized-network" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NKN: a Scalable Self-Evolving and Self-Incentivized Decentralized Network</h1>
+<blockquote>
+<p>A project aiming to rebuild the Internet that will be truly open,
+decentralized, dynamic, safe, shared and owned by the community.</p>
+</blockquote>
+<p><a href="https://nkn.org/"><img src="https://github.com/nknorg/nkn/wiki/img/nkn_logo.png" alt="nkn.org"></a></p>
+<p><a href="https://nkn.org/">https://nkn.org/</a></p>
+<p>Welcome to NKN! Watch a <a href="https://youtu.be/cT29i3-ImQk">2-minutes video of NKN
+concept</a> to get started.</p>
+<p><a href="https://youtu.be/cT29i3-ImQk"><img src="https://github.com/nknorg/nkn/wiki/img/nkn_intro_video.png" alt="NKN Introduction"></a></p>
+<h2><a class="anchor" aria-hidden="true" id="table-of-contents"></a><a href="#table-of-contents" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Table of Contents</h2>
+<ul>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#challenges-of-network-infrastructure">Challenges of Network Infrastructure</a>
+<ul>
+<li><a href="#p2p-network-limitation">P2P Network Limitation</a></li>
+<li><a href="#resource-utilization">Resource Utilization</a></li>
+<li><a href="#net-neutrality">Net Neutrality</a></li>
+</ul></li>
+<li><a href="#vision">Vision</a>
+<ul>
+<li><a href="#objectives">Objectives</a></li>
+<li><a href="#the-third-pillar">The Third Pillar</a></li>
+<li><a href="#elementary-components">Elementary Components</a></li>
+<li><a href="#networking-toolkit">Networking toolkit</a></li>
+</ul></li>
+<li><a href="#technology-foundations">Technology Foundations</a>
+<ul>
+<li><a href="#cellular-automata">Cellular Automata</a></li>
+<li><a href="#rules-as-formulas">Rules as Formulas</a></li>
+</ul></li>
+<li><a href="#new-kind-of-network">New Kind of Network</a>
+<ul>
+<li><a href="#decentralized-data-transmission-network">Decentralized Data Transmission Network</a></li>
+<li><a href="#a-useful-proof-of-work">A Useful Proof of Work</a></li>
+<li><a href="#network-topology-and-routing">Network Topology and Routing</a></li>
+<li><a href="#efficient-decentralization">Efficient Decentralization</a></li>
+</ul></li>
+<li><a href="#cellular-automata-consensus">Cellular Automata Powered Consensus</a>
+<ul>
+<li><a href="#ca-consensus-modelled-by-ising">CA Consensus Modelled by Ising</a></li>
+<li><a href="#majority-vote-cellular-automata">Majority Vote Cellular Automata</a></li>
+<li><a href="#proof-of-relay">Proof of Relay</a></li>
+<li><a href="#potential-attacks">Potential Attacks</a></li>
+</ul></li>
+<li><a href="#conclusions">Conclusions</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="abstract"></a><a href="#abstract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Abstract</h2>
+<p>NKN is a new generation of highly scalable, self-evolving and
+self-incentivized blockchain network infrastructure. NKN addresses the
+network decentralization and self-evolution by introducing Cellular
+Automata (CA) methodology. NKN tokenizes network connectivity and data
+transmission capacity by a novel and useful Proof of Work. NKN focuses
+on decentralizing network resources, similar to how Bitcoin and
+Ethereum decentralize computing power as well as how IPFS and Filecoin
+decentralize storage. Together, they form the three pillars of the
+Internet infrastructure for next generation blockchain systems. NKN
+ultimately makes the network more decentralized, efficient, equalized,
+robust and secure, thus enabling healthier, safer, and more open
+Internet.</p>
+<h2><a class="anchor" aria-hidden="true" id="challenges-of-network-infrastructure"></a><a href="#challenges-of-network-infrastructure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Challenges of Network Infrastructure</h2>
+<p>After years of transmutation, the Internet is in danger of losing its
+original vision and spirit. For example, Network Neutrality is
+overturned; spectrum and bandwidth are not efficiently utilized;
+information is fragmented and can be censored; privacy protection is
+limited. These signal that the network needs a reform. Existing
+solutions are not suitable for next generation blockchain systems due
+to the following reasons:</p>
+<ul>
+<li><p>Utilize a centralized approach to improve efficiency.</p></li>
+<li><p>Sacrifice the scalability of the network to speed up consensus.</p></li>
+<li><p>Limit participation rate of nodes or require authorization to
+increase &quot;security&quot;.</p></li>
+<li><p>Use purely financial motivations or trusted third parties to solve
+problems which should be solved by mathematics and technology.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="p2p-network-limitation"></a><a href="#p2p-network-limitation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>P2P Network Limitation</h3>
+<p>Peer-to-peer (P2P) networks currently face several major challenges,
+which are the opportunities for NKN. First static network topology is
+vulnerable to faulty and malicious attack. Second, there is no
+economic self-incentivized scheme for network connectivity and data
+transmission. Finally, network scalability is widely sacrificed to
+enhance controllability.</p>
+<h3><a class="anchor" aria-hidden="true" id="resource-utilization"></a><a href="#resource-utilization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource Utilization</h3>
+<p>A highly reliable, secure and diverse Internet is essential to
+everyone. Yet, huge inefficiency exists in the current network when
+providing global connectivity and information transmission. It's time
+to rebuild the network we want, not just patch the network we have. A
+fully decentralized and anonymous peer-to-peer system offers huge
+potential in terms of improved efficiency, sustainability and safety
+for industry and society.</p>
+<h3><a class="anchor" aria-hidden="true" id="net-neutrality"></a><a href="#net-neutrality" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Net Neutrality</h3>
+<p>When the Federal Communications Commission (FCC) approved a measure to
+remove the net neutrality rules by the end of 2017, a demand of ending
+our reliance on big telecommunication monopolies and building
+decentralized, affordable, locally owned Internet infrastructure
+becomes ever stronger. The unrestricted and private Internet access
+environment is becoming unsustainable under an endless stream of
+attacks and blockage, leading to selective and biased information
+propagation. Without a proper incentivizing engagement scheme, it is
+almost impossible to maintain a constant and secured information
+propagation channel.</p>
+<p>Furthermore, Internet has become fragmented due to various
+reasons. This not only exacerbates separation but also negatively
+impacts innovation of science, technology and economy.</p>
+<h2><a class="anchor" aria-hidden="true" id="vision"></a><a href="#vision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vision</h2>
+<p>NKN intends to revolutionize the entire network technology and
+business. NKN wants to be the Uber or Airbnb of the trillion-dollar
+communication service business, but without a central entity. NKN
+aspires to free the bits, and build the Internet we always wanted.</p>
+<h3><a class="anchor" aria-hidden="true" id="objectives"></a><a href="#objectives" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Objectives</h3>
+<p>NKN sets the following objectives:</p>
+<ul>
+<li><p>Any node can connect to this fully open network from any place</p></li>
+<li><p>Promote network sharing</p></li>
+<li><p>Secure net neutrality from network layer innovations</p></li>
+<li><p>Always keep network open and scalable</p></li>
+<li><p>Perform efficient and dynamic routing</p></li>
+<li><p>Tokenize network connectivity and data transmission assets and
+incentivize participating nodes</p></li>
+<li><p>Design and build the next generation of blockchain network</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="the-third-pillar"></a><a href="#the-third-pillar" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Third Pillar</h3>
+<p>By blockchainizing the third and probably the last pillar of Internet
+infrastructure, NKN will revolutionize the blockchain ecosystem by
+innovating on the network layer, after Bitcoin and Ethereum
+blockchainized computing power as well as IPFS and Filecoin
+blockchainized storage. The next generation blockchains based on NKN
+are capable of supporting new kind of decentralized applications
+(DApp) which have much more powerful connectivity and transmission
+capability. The vision of NKN is not only to revolutionize the
+decentralized network layers, but also to develop core technologies
+for the next generation blockchain.</p>
+<h3><a class="anchor" aria-hidden="true" id="elementary-components"></a><a href="#elementary-components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Elementary Components</h3>
+<p>NKN builds upon several innovative elementary components that are
+different from existing solutions.</p>
+<ul>
+<li><p>Blockchainizing the remaining core building blocks of computing
+infrastructure.</p></li>
+<li><p>Cellular Automata powered decentralized data transmission network
+(DDTN).</p></li>
+<li><p>Cellular Automata driven consensus.</p></li>
+<li><p>Proof of Relay, A Useful Proof of Work.</p></li>
+<li><p>Tokenization of network connectivity and data transmission
+capability.</p></li>
+<li><p>Networking toolkit for fast and painless DApp development.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="networking-toolkit"></a><a href="#networking-toolkit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Networking toolkit</h3>
+<p>With NKN, DApp developers now have a new networking toolkit to build
+truly decentralized applications rapidly and painlessly. DApp
+developers can focus entirely on the ideas and innovation, UI (user
+interface) /UX (user experience), and business logic that make their
+product successful to the end users. They no longer need to wade
+through the wild jungle of blockchain, cryptography, consensus
+mechanism, identity and security before they even write one line of
+code for their users.</p>
+<p>For example, in traditional app development with centralized SaaS
+(Software as a Service) offerings, one can host app on cloud computing
+platforms, store data on cloud storage, use web services for text
+message, phone call and payment. In the decentralized blockchain
+world, it is already conceivable today to build a new kind of Facebook
+by using Ethereum /NEO for computing, IPFS for storage, and NKN for
+networking. The beauty of this new paradigm is that users will
+personally own their identity and data, and can be both consumer and
+provider in the entire system as well. On top of that, at each layer
+there are built-in self-incentivized mechanism to maximize the network
+effect and bootstrap the entire community.</p>
+<p>NKN will be one of the three foundational elements and play a critical
+role in this decentralized paradigm.</p>
+<h2><a class="anchor" aria-hidden="true" id="technology-foundations"></a><a href="#technology-foundations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Technology Foundations</h2>
+<p>NKN utilizes microscopic rules based on Cellular Automata to define
+network topology, achieves self-evolution behaviors, and explores
+Cellular Automata driven consensus, which is fundamentally different
+from existing blockchain network layer.</p>
+<p>As a powerful tool to study complex systems, Cellular Automaton is
+closely linked to philosophical categories such as simple and complex,
+micro and macro, local and global, finite and infinite, discrete and
+continuous, etc.</p>
+<h3><a class="anchor" aria-hidden="true" id="cellular-automata"></a><a href="#cellular-automata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cellular Automata</h3>
+<p>Cellular Automata (CA) is a state machine with a collection of nodes,
+each changing its state following a local rule that only depends on
+its neighbors. Each node only has a few neighbor nodes. Propagating
+through local interactions, local states will eventually affect the
+global behavior of CA. The desired openness of network is determined
+by the homogeneity of Cellular Automata where all nodes are identical,
+forming a fully decentralized P2P (peer-to-peer) network. Each node in
+the NKN network is constantly updating based on its current state as
+well as the states of neighbors. The neighbors of each node are also
+dynamically changing so that the network topology is also dynamic
+without changing its underlying infrastructure and protocols.</p>
+<p>NKN utilizes CA to achieve efficient, decentralized, and dynamical
+topology such that information and data can be transmitted efficiently
+and dynamically without centralized connectivity.</p>
+<h3><a class="anchor" aria-hidden="true" id="rules-as-formulas"></a><a href="#rules-as-formulas" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rules as Formulas</h3>
+<p>The Cellular Automata programming formula is called &quot;local rule&quot;,
+which is an indispensable rule for next generation network of NKN and
+has an important influence on the network topology. Proper choice of
+local rules leads to Cellular Automata with complex but self-organized
+behaviors on the boundary between stability and chaos. Rules are
+essential because they are formulas to program Cellular Automata and
+Automata Networks.</p>
+<p>The NKN team believes CA-based or CA-driven systems are more natural
+and organic than current approaches utilizing static and fully
+connected topology. Complex systems with such a simple structure are
+closer to natural systems, thus enabling self-evolution.</p>
+<h2><a class="anchor" aria-hidden="true" id="new-kind-of-network"></a><a href="#new-kind-of-network" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New Kind of Network</h2>
+<p>NKN is the next generation of peer to peer network infrastructure
+built upon blockchain technology backed by Cellular Automata theory
+aiming at revolutionizing the Internet with true decentralization and
+native token incentive mechanism.</p>
+<h3><a class="anchor" aria-hidden="true" id="decentralized-data-transmission-network"></a><a href="#decentralized-data-transmission-network" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Decentralized Data Transmission Network</h3>
+<p>NKN introduced the concept of Decentralized Data Transmission Network
+(DDTN). DDTN combines multiple independent and self-organized relay
+nodes to provide clients with connectivity and data transmission
+capability. This coordination is decentralized and does not require
+trust of any involved parties. The secure operation of NKN is achieved
+through a consensus mechanism that coordinates and validates the
+operations performed by each node. DDTN provides a variety of
+strategies for decentralized application (DApp).</p>
+<p>In contrast to centralized network connectivity and data transmission,
+there are multiple efficient paths between nodes in DDTN, which can be
+used to enhance data transmission capacity. Native tokens can
+incentivize the sharing of network resources, and eventually minimize
+wasted connectivity and bandwidth. Such a property is termed
+&quot;self-incentivized&quot;.</p>
+<h3><a class="anchor" aria-hidden="true" id="a-useful-proof-of-work"></a><a href="#a-useful-proof-of-work" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>A Useful Proof of Work</h3>
+<p>As the pioneering cryptocurrency, Bitcoin is generated by mining, a
+Proof of Work mechanism that incentivizes miners to verify
+transactions by solving difficult hashing problems. The downside of
+Bitcoin mining is that efficient mining requires specialized and
+expensive hardware and consumes a lot of energy. According to
+Digiconomist, Bitcoin energy consumption rate is close to 50 TWh/year
+at mid February 2018 and still increasing, while the number is close
+to 14 TWh/year for Ethereum. Electricity consumed by these two
+cryptocurrencies combined has surpassed the electricity usage of many
+countries.</p>
+<p>A way to prove the work while avoiding waste of resources is highly
+desired. NKN proposes an alternative to the current PoW by providing a
+more decentralized, dynamically evolving, self-organizing and
+self-evolving network infrastructure and designing a whole new set of
+consensus mechanisms. The novel PoW does not result in a waste of
+resources. Instead, it is a peer-to-peer sharing mechanism at
+blockchain level. Participants receive rewards by contributing more
+network resources than they consume. NKN uses Proof of Relay mechanism
+to guarantee network connectivity and data transmission capacity.</p>
+<h3><a class="anchor" aria-hidden="true" id="network-topology-and-routing"></a><a href="#network-topology-and-routing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Network Topology and Routing</h3>
+<p>Cellular Automata on Networks (CAoN) is a natural extension of Cellular Automata that is able to model networks with non-geometric neighbor connections. It is powerful when modeling networks whose topology is evolving based on local rules. As the goal is to build a decentralized blockchain system with dynamic topology, CAoN is a natural model for the system.</p>
+<h3><a class="anchor" aria-hidden="true" id="efficient-decentralization"></a><a href="#efficient-decentralization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Efficient Decentralization</h3>
+<p>Due to the dynamical nature of NKN, network topology between nodes is
+constantly updating. Proper updating mechanism is critical to achieve
+decentralization of the resulting topology. If, for example, the
+updating mechanism is chosen such that a newly joined node has higher
+chance to choose node with more neighbors to be its neighbor, and the
+probability to choose a node is proportional to the degree of that
+node, then the resulting network will be scale-free: the degree
+distribution follows a power law form. Such networks have centralized
+hubs defined by nodes with huge degree. Although hubs could
+potentially increase efficiency, they make network less robust as the
+failure of hubs will have much larger impact than the failure of other
+nodes.</p>
+<p>One of the NKN's goals is to design and build networks that are
+decentralized while still being efficient in information
+transmission. This should be done by using a proper topology updating
+mechanism that considers both algorithm and incentive. On the
+algorithm side, neighbors should be sampled and chosen randomly; on
+the incentive side, reward for data transmission should be sublinear
+(grows slower than linear function) so that hubs are
+discouraged. Sparse random network is one possible topology that could
+be generated from such mechanism. It is decentralized and thus robust
+to the failure of any node, while still being efficient in routing due
+to its small network diameter.</p>
+<h2><a class="anchor" aria-hidden="true" id="cellular-automata-powered-consensus"></a><a href="#cellular-automata-powered-consensus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cellular Automata Powered Consensus</h2>
+<p>Nodes in blockchain are peers due to the decentralized nature of
+blockchain. The inherent lack of trust in blockchain systems is
+particularly noteworthy because any node can send any information to
+any nodes in the blockchain. Peers must evaluate information and make
+agreement on their actions for blockchain to work properly.</p>
+<p>NKN is designed to be a futuristic blockchain infrastructure that
+requires low latency, high bandwidth, extremely high scalability and
+low cost to reach consensus. These properties are crucial for future
+DApps. Thus, NKN needs new consensus algorithms that could satisfy
+such high requirements.</p>
+<h3><a class="anchor" aria-hidden="true" id="ca-consensus-modelled-by-ising"></a><a href="#ca-consensus-modelled-by-ising" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CA Consensus Modelled by Ising</h3>
+<p>Cellular Automata (CA) is naturally a large distributed system with
+only local connections. The asymptotic behavior of the system is
+controlled by its updating rule. It is possible to achieve guaranteed
+global consensus in CA using message passing algorithm based only on
+sparse local neighbors for a set of updating rules.</p>
+<h3><a class="anchor" aria-hidden="true" id="majority-vote-cellular-automata"></a><a href="#majority-vote-cellular-automata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Majority Vote Cellular Automata</h3>
+<p>Majority Vote Cellular Automata (MVCA) is a Cellular Automata using
+majority vote as updating rule.</p>
+<p>Using the mathematical framework originally developed for Ising model
+in physics, we found and proved that a class of CA rules will
+guarantee to reach consensus in at most O(N) iterations using only
+states of sparse neighbors by an exact map from CA to zero temperature
+Ising model. Some studies investigated the fault tolerance of Cellular
+Automata and how to increase robustness in Cellular Automata-Based
+systems. We further showed that the result is robust to random and
+malicious faulty nodes and compute the threshold when desired
+consensus cannot be made.</p>
+<h3><a class="anchor" aria-hidden="true" id="proof-of-relay"></a><a href="#proof-of-relay" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Proof of Relay</h3>
+<p>Consensus in NKN is driven by Proof of Relay (PoR), a useful Proof of
+Work (PoW) where the expected rewards a node gets depend on its
+network connectivity and data transmission power. Node proves its
+relay workload by adding digital signature when forwarding data, which
+is then accepted by the system through consensus algorithm.</p>
+<p>PoR is not a waste of resources since the work performed in PoR
+benefits the whole network by providing more transmission power. The
+&quot;mining&quot; is redefined as contributing to the data transmission layer,
+and the only way to get more rewards is providing more transmission
+power. The competition between nodes in the network will eventually
+drive the system towards the direction of low latency, high bandwidth
+data transmission network.</p>
+<p>PoR is used for both token mining and transaction verification. On the
+one hand, token will be rewarded to nodes for data transmission; on
+the other hand, the expected reward for transaction verification may
+also depend on PoR, either through election or difficulty adjustment.</p>
+<h2><a class="anchor" aria-hidden="true" id="potential-attacks"></a><a href="#potential-attacks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Potential Attacks</h2>
+<p>Since NKN is designed with attack prevention in mind, it is necessary
+to review related attack types. Attack analysis and mitigation will be
+one of the important aspects of NKN development and future work.</p>
+<ul>
+<li><p>Double spending attack. Double spending attack refers to the case
+where the same token is spent more than once. In classic blockchain
+systems, nodes prevent double-spending attack by consensus to
+confirm the transaction sequence.</p></li>
+<li><p>Sybil Attacks. Sybil attack refers to the case where malicious node
+pretends to be multiple users. Malicious miners can pretend to
+deliver more copies and get paid. Physical forwarding is done by
+creating multiple Sybil identities, but only transmitting data once.</p></li>
+<li><p>Denial-of-Service (DoS) Attacks. An off-line resource centric attack
+is known as a denial of service attack (DoS). For example, an
+attacker may want to target a specific account and prevent the
+account holder from posting transactions.</p></li>
+<li><p>Quality-of-Service (QoS) Attacks.  Some attackers want to slow down
+the system performance, potentially reducing the amount of network
+connectivity and data transfer speed.</p></li>
+<li><p>Eclipse Attack. An attacker controls the P2P communication network
+and manipulates a node's neighbors so that it only communicates with
+malicious nodes. The vulnerability of the network to eclipse attack
+depends on the peer sampling algorithm, and can be reduced by
+carefully choosing neighbors.</p></li>
+<li><p>Selfish Mining Attacks. In a selfish mining strategy, the selfish
+miners maintain two blockchains, one public and one
+private. Initially, the private blockchain is the same as the public
+blockchain. The attacker always mine on the private chain, unless
+the length of the private chain is being caught up by the public
+chain, in which case the attacker publishes the private chain to get
+rewards. The attack essentially lower the threshold of 51% attack as
+it may be more efficient for other miners to mine the private chain
+than the public chain. Yet, as an economic attack, selfish mining
+attack needs to be announced in advance to attract miners.</p></li>
+<li><p>Fraud Attacks. Malicious miners can claim large amounts of data to
+be transmitted but efficiently generate data on-demand using
+applets. If the applet is smaller than the actual amount of relay
+data, it increases the likelihood of malicious miners getting block
+bonus.</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="conclusions"></a><a href="#conclusions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conclusions</h2>
+<p>First, NKN is an ideal networking platform for developing
+decentralized applications. DApp developers can be completely focused
+on the creative ideas and innovations that make their products
+successful for end users, as well as business logic. They no longer
+need to worry about details of network infrastructure.</p>
+<p>Second, NKN incentive model encourages more people to join the network
+to share and enhance network connectivity and data transmission,
+changing the entire network structure and creating a huge market. NKN
+is targeting the trillion-dollar telecommunications business, and aim
+to provide better connectivity to everyone by incentivize the sharing
+of unused networking resources, expanding and revolutionize the
+sharing network.</p>
+<p>Compare to current systems, NKN blockchain platform is more suitable
+for peer-to-peer data transmission and connectivity. In the meantime,
+this self-incentivized model encourages more nodes to join the
+network, build a flat network structure, implement multi-path routing,
+and create a new generation of network transmission structure.</p>
+<p>From the perspectives of computing infrastructure innovation, NKN will
+revolutionize the blockchain ecosystem by blockchainizing the third
+and probably the last pillar of Internet infrastructure, after Bitcoin
+and Ethereum blockchainized computing power as well as IPFS and
+Filecoin blockchainized storage. Complementing the other two pillars
+of the blockchain revolution, NKN will be the next generation
+decentralized network that is self-evolving, self-incentivized, and
+highly scalable.</p>
+<p>NKN is a strategic exploration and innovation of the general network
+layer infrastructure delivering the next generation network to other
+fields. A highly reliable, secure and decentralized Internet is
+essential so that every individual and every industry can achieve
+their full potential in the digital world. NKN will offer tremendous
+potential for achieving a fully decentralized peer-to-peer system to
+make the Internet more efficient, sustainable and secure.</p>
+<p>The current network has huge inefficiencies for providing universal
+connectivity and access for all information and applications. It's
+time to rebuild the network we really need instead of constantly
+patching the networks we already own. Let's start building the future
+Internet, today.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentations/docs/home"><span class="arrow-prev">← </span><span>Welcome</span></a><a class="docs-next button" href="/documentations/docs/get-start"><span>Get Started</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#table-of-contents">Table of Contents</a></li><li><a href="#abstract">Abstract</a></li><li><a href="#challenges-of-network-infrastructure">Challenges of Network Infrastructure</a><ul class="toc-headings"><li><a href="#p2p-network-limitation">P2P Network Limitation</a></li><li><a href="#resource-utilization">Resource Utilization</a></li><li><a href="#net-neutrality">Net Neutrality</a></li></ul></li><li><a href="#vision">Vision</a><ul class="toc-headings"><li><a href="#objectives">Objectives</a></li><li><a href="#the-third-pillar">The Third Pillar</a></li><li><a href="#elementary-components">Elementary Components</a></li><li><a href="#networking-toolkit">Networking toolkit</a></li></ul></li><li><a href="#technology-foundations">Technology Foundations</a><ul class="toc-headings"><li><a href="#cellular-automata">Cellular Automata</a></li><li><a href="#rules-as-formulas">Rules as Formulas</a></li></ul></li><li><a href="#new-kind-of-network">New Kind of Network</a><ul class="toc-headings"><li><a href="#decentralized-data-transmission-network">Decentralized Data Transmission Network</a></li><li><a href="#a-useful-proof-of-work">A Useful Proof of Work</a></li><li><a href="#network-topology-and-routing">Network Topology and Routing</a></li><li><a href="#efficient-decentralization">Efficient Decentralization</a></li></ul></li><li><a href="#cellular-automata-powered-consensus">Cellular Automata Powered Consensus</a><ul class="toc-headings"><li><a href="#ca-consensus-modelled-by-ising">CA Consensus Modelled by Ising</a></li><li><a href="#majority-vote-cellular-automata">Majority Vote Cellular Automata</a></li><li><a href="#proof-of-relay">Proof of Relay</a></li></ul></li><li><a href="#potential-attacks">Potential Attacks</a></li><li><a href="#conclusions">Conclusions</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><img src="/documentations/img/favicon.png" alt="Bowler" height="45"/><a href="https://nkn.org">NKN</a><a href="https://twitter.com/NKN_ORG">Twitter</a><a href="https://github.com/nknorg/nkn">GitHub</a><a href="https://forum.nkn.org">Forum</a></section><section class="copyright">Copyright © 2019 NKN | All rights reserved</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

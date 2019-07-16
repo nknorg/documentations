@@ -1,0 +1,253 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Websocket API Reference · NKN Documentations</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Here are some APIs to communicate with blockchain.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Websocket API Reference · NKN Documentations"/><meta property="og:type" content="website"/><meta property="og:url" content="https://nknorg.github.io/documentations/"/><meta property="og:description" content="&lt;p&gt;Here are some APIs to communicate with blockchain.&lt;/p&gt;
+"/><meta property="og:image" content="https://nknorg.github.io/documentations/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://nknorg.github.io/documentations/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/documentations/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/documentations/js/scrollSpy.js"></script><link rel="stylesheet" href="/documentations/css/main.css"/><script src="/documentations/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/documentations/"><img class="logo" src="/documentations/img/favicon.png" alt="NKN Documentations"/><h2 class="headerTitleWithLogo">NKN Documentations</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/documentations/docs/home" target="_self">API</a></li><li class=""><a href="https://github.com/nknorg/nkn" target="_self">GitHub</a></li><li class=""><a href="https://nkn.org" target="_self">NKN</a></li><li class=""><a href="https://github.com/nknorg/nkn/wiki" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>API Reference</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Home</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentations/docs/home">Welcome</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/introduction-to-nkn">Introduction to NKN</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/get-start">Get Started</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/nkn-client-protocol">NKN Client Protocol</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/standard-json-format-wallat">Standard JSON-format Wallat</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API Reference</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentations/docs/jsonrpc-api-reference">JsonRPC API Reference</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/documentations/docs/websocket-api-reference">Websocket API Reference</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/command-line-wallet">Command Line Wallet</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">System Design</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentations/docs/consensus-and-blockchain">Consensus and Blockchain</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/distributed-data-transmission-network">Distributed Data Transmission Network (DDTN)</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/nkn-address-scheme">NKN Address Scheme</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/proof-of-relay">Proof of Relay (PoR)</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/relay-path-validation">Relay Path Validation</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/verifiable-random-function">Verifiable Random Function</a></li><li class="navListItem"><a class="navItem" href="/documentations/docs/address-generation-theory">Address Generation Theory</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/documentations/docs/faq0">faq demo</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Websocket API Reference</h1></header><article><div><span><p>Here are some APIs to communicate with blockchain.</p>
+<h2><a class="anchor" aria-hidden="true" id="contents"></a><a href="#contents" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contents</h2>
+<ol>
+<li><a href="#usage">usage</a></li>
+<li><a href="#errcode">error codes</a></li>
+<li><a href="#apis">APIs</a>
+<ul>
+<li><a href="#getlatestblockheight">getlatestblockheight</a></li>
+<li><a href="#getblock">getblock</a></li>
+<li><a href="#getconnectioncount">getconnectioncount</a></li>
+<li><a href="#gettransaction">gettransaction</a></li>
+<li><a href="#heartbeat">heartbeat</a></li>
+<li><a href="#getsessioncount">getsessioncount</a></li>
+</ul></li>
+<li><a href="#notice">notice</a>
+<ul>
+<li><a href="#updateSigChainBlockHash">updateSigChainBlockHash</a></li>
+</ul></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="details"></a><a href="#details" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Details</h2>
+<p><h3 id="usage">1. usage</h3></p>
+<p>A typical Web request format and a typical response format could be as following:</p>
+<pre><code class="hljs"><span class="hljs-comment">--&gt; {</span>
+        <span class="hljs-string">"Action"</span>: <span class="hljs-string">"getblock"</span>,
+        <span class="hljs-string">"height"</span>: <span class="hljs-number">1</span>
+    }
+&lt;<span class="hljs-comment">-- {</span>
+        <span class="hljs-string">"Action"</span>:<span class="hljs-string">"getblock"</span>,
+        <span class="hljs-string">"Error"</span>:<span class="hljs-number">0</span>,
+        <span class="hljs-string">"Desc"</span>:<span class="hljs-string">"SUCCESS"</span>,
+        <span class="hljs-string">"Result"</span>: {<span class="hljs-string">"hash"</span>:<span class="hljs-string">"5f85d1286801c2f1129a02b0b19a3312f8113aaa073b5987346c59e27a12bdc6"</span>,<span class="hljs-string">"header"</span>:...},
+        <span class="hljs-string">"Version"</span>:<span class="hljs-string">"1.0.0"</span>
+    }
+</code></pre>
+<p>The syntax '--&gt;' indicates data sent to Server, and '&lt;--' indicates data sent to Client. If there was an error invoking the method, the following response will be sent:</p>
+<pre><code class="hljs"><span class="hljs-comment">--&gt; {</span>
+        <span class="hljs-string">"Action"</span>: <span class="hljs-string">"getblock"</span>,
+        <span class="hljs-string">"height"</span>: <span class="hljs-number">-1</span>,
+    }
+&lt;<span class="hljs-comment">-- {</span>
+        <span class="hljs-string">"Action"</span>:<span class="hljs-string">"getblock"</span>,
+        <span class="hljs-string">"Error"</span>:<span class="hljs-number">44004</span>,
+        <span class="hljs-string">"Desc"</span>:<span class="hljs-string">"UNKNOWN HASH"</span>,
+        <span class="hljs-string">"Result"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-string">"Version"</span>:<span class="hljs-string">"1.0.0"</span>
+    }
+</code></pre>
+<p><h3 id="errcode">2. error codes</h3></p>
+<table>
+<thead>
+<tr><th>code</th><th>message</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td>0</td><td>&quot;SUCCESS&quot;</td><td>-</td></tr>
+<tr><td>32601</td><td>&quot;Method not found&quot;</td><td>&quot;The called method was not found on the server.&quot;</td></tr>
+<tr><td>41001</td><td>&quot;SESSION EXPIRED&quot;</td><td>-</td></tr>
+<tr><td>41002</td><td>&quot;SERVICE CEILING&quot;</td><td>-</td></tr>
+<tr><td>41003</td><td>&quot;ILLEGAL DATAFORMAT&quot;</td><td>-</td></tr>
+<tr><td>42001</td><td>&quot;INVALID METHOD&quot;</td><td>-</td></tr>
+<tr><td>42002</td><td>&quot;INVALID PARAMS&quot;</td><td>-</td></tr>
+<tr><td>42003</td><td>&quot;VERIFY TOKEN ERROR&quot;</td><td>-</td></tr>
+<tr><td>43001</td><td>&quot;INVALID TRANSACTION&quot;</td><td>-</td></tr>
+<tr><td>43002</td><td>&quot;INVALID ASSET&quot;</td><td>-</td></tr>
+<tr><td>43003</td><td>&quot;INVALID BLOCK&quot;</td><td>-</td></tr>
+<tr><td>43004</td><td>&quot;INVALID HASH&quot;</td><td>-</td></tr>
+<tr><td>43005</td><td>&quot;INVALID VERSION&quot;</td><td>-</td></tr>
+<tr><td>44001</td><td>&quot;UNKNOWN TRANSACTION&quot;</td><td>-</td></tr>
+<tr><td>44002</td><td>&quot;UNKNOWN ASSET&quot;</td><td>-</td></tr>
+<tr><td>44003</td><td>&quot;UNKNOWN BLOCK&quot;</td><td>-</td></tr>
+<tr><td>44004</td><td>&quot;UNKNOWN HASH&quot;</td><td>-</td></tr>
+<tr><td>45001</td><td>&quot;INTERNAL ERROR&quot;</td><td>-</td></tr>
+<tr><td>47001</td><td>&quot;SMARTCODE EXEC ERROR&quot;</td><td>-</td></tr>
+</tbody>
+</table>
+<p><h3 id="apis">3. APIs</h3></p>
+<ul>
+<li><h4 id="getlatestblockheight">getlatestblockheight</h4></li>
+</ul>
+<p>Get the height of current block.</p>
+<pre><code class="hljs"><span class="hljs-comment">--&gt; {</span>
+        <span class="hljs-string">"Action"</span>: <span class="hljs-string">"getlatestblockheight"</span>
+    }
+&lt;<span class="hljs-comment">-- {</span>
+        <span class="hljs-string">"Action"</span>:<span class="hljs-string">"getlatestblockheight"</span>,
+        <span class="hljs-string">"Error"</span>:<span class="hljs-number">0</span>,
+        <span class="hljs-string">"Desc"</span>:<span class="hljs-string">"SUCCESS"</span>,
+        <span class="hljs-string">"Result"</span>:<span class="hljs-number">660</span>,
+        <span class="hljs-string">"Version"</span>:<span class="hljs-string">"1.0.0"</span>
+    }
+</code></pre>
+<ul>
+<li><h4 id="getblock">getblock</h4></li>
+</ul>
+<p>Get the block information by height or hash.</p>
+<pre><code class="hljs"><span class="hljs-comment">--&gt; {</span>
+        <span class="hljs-string">"Action"</span>: <span class="hljs-string">"getblock"</span>,
+        <span class="hljs-string">"height"</span>: <span class="hljs-number">1</span>
+    }
+&lt;<span class="hljs-comment">-- {</span>
+        <span class="hljs-string">"Action"</span>:<span class="hljs-string">"getblock"</span>,
+        <span class="hljs-string">"Error"</span>:<span class="hljs-number">0</span>,
+        <span class="hljs-string">"Desc"</span>:<span class="hljs-string">"SUCCESS"</span>,
+        <span class="hljs-string">"Result"</span>: {<span class="hljs-string">"hash"</span>:<span class="hljs-string">"5f85d1286801c2f1129a02b0b19a3312f8113aaa073b5987346c59e27a12bdc6"</span>,<span class="hljs-string">"header"</span>:...},
+        <span class="hljs-string">"Version"</span>:<span class="hljs-string">"1.0.0"</span>
+    }
+</code></pre>
+<p>or</p>
+<pre><code class="hljs">
+<span class="hljs-comment">--&gt; {</span>
+        <span class="hljs-string">"Action"</span>: <span class="hljs-string">"getblock"</span>,
+        <span class="hljs-string">"hash"</span>: <span class="hljs-string">"5f85d1286801c2f1129a02b0b19a3312f8113aaa073b5987346c59e27a12bdc6"</span>
+    }
+&lt;<span class="hljs-comment">-- {</span>
+        <span class="hljs-string">"Action"</span>:<span class="hljs-string">"getblock"</span>,
+        <span class="hljs-string">"Error"</span>:<span class="hljs-number">0</span>,
+        <span class="hljs-string">"Desc"</span>:<span class="hljs-string">"SUCCESS"</span>,
+        <span class="hljs-string">"Result"</span>: {<span class="hljs-string">"hash"</span>:<span class="hljs-string">"5f85d1286801c2f1129a02b0b19a3312f8113aaa073b5987346c59e27a12bdc6"</span>,<span class="hljs-string">"header"</span>:...},
+        <span class="hljs-string">"Version"</span>:<span class="hljs-string">"1.0.0"</span>
+    }
+</code></pre>
+<ul>
+<li><h4 id="getconnectioncount">getconnectioncount</h4></li>
+</ul>
+<p>Get the connection amount to this node.</p>
+<pre><code class="hljs"><span class="hljs-comment">--&gt; {</span>
+        <span class="hljs-string">"Action"</span>: <span class="hljs-string">"getconnectioncount"</span>
+    }
+&lt;<span class="hljs-comment">-- {</span>
+        <span class="hljs-string">"Action"</span>:<span class="hljs-string">"getconnectioncount"</span>,
+        <span class="hljs-string">"Error"</span>:<span class="hljs-number">0</span>,
+        <span class="hljs-string">"Desc"</span>:<span class="hljs-string">"SUCCESS"</span>,
+        <span class="hljs-string">"Result"</span>:<span class="hljs-number">3</span>,
+        <span class="hljs-string">"Version"</span>:<span class="hljs-string">"1.0.0"</span>
+    }
+</code></pre>
+<ul>
+<li><h4 id="gettransaction">gettransaction</h4></li>
+</ul>
+<p>Get a transaction by hash.</p>
+<pre><code class="hljs"><span class="hljs-comment">--&gt; {</span>
+        <span class="hljs-string">"Action"</span>:  <span class="hljs-string">"gettransaction"</span>,
+        <span class="hljs-string">"hash"</span>:<span class="hljs-string">"327bb43c2e40ccb2f83011d35602829872ab190171b79047397d000eddda18a9"</span>,
+    }
+&lt;<span class="hljs-comment">-- {</span>
+        <span class="hljs-string">"Action"</span>:<span class="hljs-string">"gettransaction"</span>,
+        <span class="hljs-string">"Error"</span>:<span class="hljs-number">0</span>,
+        <span class="hljs-string">"Desc"</span>:<span class="hljs-string">"SUCCESS"</span>,
+        <span class="hljs-string">"Result"</span>: {<span class="hljs-string">"hash"</span>: <span class="hljs-string">"327bb43c2e40ccb2f83011d35602829872ab190171b79047397d000eddda18a9"</span>, <span class="hljs-string">"inputs"</span>:...},
+        <span class="hljs-string">"Version"</span>:<span class="hljs-string">"1.0.0"</span>
+    }
+</code></pre>
+<ul>
+<li><h4 id="heartbeat">heartbeat</h4></li>
+</ul>
+<p>heart beat.</p>
+<pre><code class="hljs"><span class="hljs-comment">--&gt; {</span>
+        <span class="hljs-string">"Action"</span>:  <span class="hljs-string">"heartbeat"</span>
+    }
+&lt;<span class="hljs-comment">-- {</span>
+        <span class="hljs-string">"Action"</span>:<span class="hljs-string">"heartbeat"</span>,
+        <span class="hljs-string">"Error"</span>:<span class="hljs-number">0</span>,
+        <span class="hljs-string">"Desc"</span>:<span class="hljs-string">"SUCCESS"</span>,
+        <span class="hljs-string">"Result"</span>:<span class="hljs-string">"5a232d0c-79ea-11e8-a7f5-6a00030e74b0"</span>,
+        <span class="hljs-string">"Version"</span>:<span class="hljs-string">"1.0.0"</span>
+    }
+</code></pre>
+<ul>
+<li><h4 id="getsessioncount">getsessioncount</h4></li>
+</ul>
+<p>Get session amount of websocket.</p>
+<pre><code class="hljs"><span class="hljs-comment">--&gt; {</span>
+        <span class="hljs-string">"Action"</span>:  <span class="hljs-string">"getsessioncount"</span>,
+        <span class="hljs-string">"Addr"</span>:    <span class="hljs-string">"127.0.0.1:30002"</span>
+    }
+&lt;<span class="hljs-comment">-- {</span>
+        <span class="hljs-string">"Action"</span>:<span class="hljs-string">"heartbeat"</span>,
+        <span class="hljs-string">"Error"</span>:<span class="hljs-number">0</span>,
+        <span class="hljs-string">"Desc"</span>:<span class="hljs-string">"SUCCESS"</span>,
+        <span class="hljs-string">"Result"</span>:<span class="hljs-number">1</span>,
+        <span class="hljs-string">"Version"</span>:<span class="hljs-string">"1.0.0"</span>
+    }
+</code></pre>
+<ul>
+<li><h4 id="updateSigChainBlockHash">updateSigChainBlockHash</h4></li>
+</ul>
+<p>Update sigchain block hash.</p>
+<pre><code class="hljs">&lt;<span class="hljs-comment">-- {</span>
+        <span class="hljs-string">"Action"</span>:<span class="hljs-string">"updateSigChainBlockHash"</span>,
+        <span class="hljs-string">"Error"</span>:<span class="hljs-number">0</span>,
+        <span class="hljs-string">"Desc"</span>:<span class="hljs-string">"SUCCESS"</span>,
+        <span class="hljs-string">"Result"</span>:<span class="hljs-string">"fe5731ccaa605877306f4fde82c8b2d39f78fa22ff33f87bb818ffddbad7dd64"</span>,
+        <span class="hljs-string">"Version"</span>:<span class="hljs-string">"1.0.0"</span>
+    }
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/documentations/docs/jsonrpc-api-reference"><span class="arrow-prev">← </span><span class="function-name-prevnext">JsonRPC API Reference</span></a><a class="docs-next button" href="/documentations/docs/command-line-wallet"><span>Command Line Wallet</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#contents">Contents</a></li><li><a href="#details">Details</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><img src="/documentations/img/favicon.png" alt="Bowler" height="45"/><a href="https://nkn.org">NKN</a><a href="https://twitter.com/NKN_ORG">Twitter</a><a href="https://github.com/nknorg/nkn">GitHub</a><a href="https://forum.nkn.org">Forum</a></section><section class="copyright">Copyright © 2019 NKN | All rights reserved</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
