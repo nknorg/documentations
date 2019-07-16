@@ -38,12 +38,13 @@ const siteConfig = {
   /* path to images for header/footer */
   headerIcon: 'img/favicon.png',
   footerIcon: 'img/favicon.png',
-  favicon: 'img/favicon.png',
+  favicon: 'img/favicon.ico',
 
   /* Colors for website */
   colors: {
-    //primaryColor: '#794f83',
-    primaryColor: '#20232a',
+    //primaryColor: '#20232a',
+    //secondaryColor: '#1874CD',
+    primaryColor: '#006699',
     secondaryColor: '#54375b',
   },
 
@@ -84,6 +85,8 @@ const siteConfig = {
   twitterUsername: 'NKN_ORG',
   nknWebsiteUrl: 'https://nkn.org',
   nknForumUrl: 'https://forum.nkn.org',
+
+  docsSideNavCollapsible: true,
 
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,
