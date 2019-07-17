@@ -3,8 +3,6 @@ id: standard-json-format-wallat
 title: Standard JSON-format Wallat
 ---
 
-## Standard JSON-format wallat
-
 ```
 {
 	"PasswordHash":"",

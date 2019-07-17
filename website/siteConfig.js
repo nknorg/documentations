@@ -24,6 +24,7 @@ const siteConfig = {
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
 
+  cname: 'docs.nkn.org',
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'home', label: 'API'},
