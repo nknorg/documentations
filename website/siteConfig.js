@@ -11,8 +11,8 @@
 const siteConfig = {
   title: 'NKN Docs', // Title for your website.
   tagline: 'A website for nkn online documentations',
-  url: 'https://nknorg.github.io', // Your website URL
-  baseUrl: '/documentations/', // Base URL for your project */
+  url: 'https://docs.nkn.org', // Your website URL
+  baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
