@@ -1,6 +1,6 @@
 ---
-id: address-generation-theory
-title: Address Generation Theory
+id: wallet-address-scheme
+title: NKN Wallet Address Scheme
 ---
 
 | Prefix | Uint160 | Uint32
@@ -9,8 +9,7 @@ title: Address Generation Theory
 
 * **Fool-proof**:
 ```
-Fix 0x35 in v0.8 for base58.encode got string start with "N"
-Fix 0x02b825 in v0.9 for base58.encode got string start with "NKN"
+Prefix is 0x02b825 (such that wallet address always starts with "NKN")
 ```
 
 * **160 bits Hash of RedeemScript**:
@@ -35,12 +34,11 @@ SHA256 hash twice with (Prefix + Uint160), retain lowest 32bits
 ## Convertor Example
 https://github.com/nknorg/nkn/blob/v0.9/util/pubkey2addr.go
 ```
-    if k, err = hex.DecodeString(key); err == nil {
-	if pk, err = crypto.DecodePoint(k); err == nil {
-		if redeemHash, err = contract.CreateRedeemHash(pk); err == nil {
-			return redeemHash.ToAddress()
-		}
-	}
-    }
+  if k, err = hex.DecodeString(key); err == nil {
+  	if pk, err = crypto.DecodePoint(k); err == nil {
+  		if redeemHash, err = contract.CreateRedeemHash(pk); err == nil {
+  			return redeemHash.ToAddress()
+  		}
+  	}
+  }
 ```
-
