@@ -1,5 +1,5 @@
 ---
-id: get-start
+id: get-started
 title: Get Started
 ---
 
@@ -298,4 +298,3 @@ git commit -s
 * [Telegram](https://t.me/nknorg)
 * [Reddit](https://www.reddit.com/r/nknblockchain/)
 * [Twitter](https://twitter.com/NKN_ORG)
-
