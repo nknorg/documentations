@@ -27,6 +27,7 @@ const siteConfig = {
   cname: 'docs.nkn.org',
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
+    //{search: true},
     {doc: 'home', label: 'API'},
     {href: 'https://github.com/nknorg/nkn', label: 'GitHub'},
     {href: 'https://nkn.org', label: 'NKN'},
@@ -71,6 +72,11 @@ const siteConfig = {
     theme: 'default',
   },
 
+  algolia: {
+    apiKey: '4a0261289a8269108860d1988a7e48f6',
+    indexName: 'nkn',
+    algoliaOptions: {} // Optional, if provided by Algolia
+  },
   // Add custom scripts here that would be placed in <script> tags.
   scripts: ['https://buttons.github.io/buttons.js'],
 
