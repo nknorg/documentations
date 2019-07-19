@@ -32,7 +32,7 @@ $ yarn run start
 
 ```sh
 $ git add --all
-$ git commit -m "commit comments"
+$ git commit -s
 $ git push origin master
 ```
 
