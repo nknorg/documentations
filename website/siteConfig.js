@@ -28,7 +28,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     //{search: true},
-    {doc: 'home', label: 'API'},
+    {doc: 'home', label: 'Docs'},
     {href: 'https://github.com/nknorg/nkn', label: 'GitHub'},
     {href: 'https://nkn.org', label: 'NKN'},
     {href: 'https://github.com/nknorg/nkn/wiki', label: 'Help'},
