@@ -10,9 +10,6 @@ title: Welcome
 
 [![nkn.org](https://github.com/nknorg/nkn/wiki/img/nkn_logo.png)](https://nkn.org/)
 
-Official Website: [https://nkn.org/](https://nkn.org/)
+Official Website: [https://nkn.org](https://nkn.org)
 
-Discord: [https://discord.gg/c7mTynX](https://discord.gg/c7mTynX)
-
-Telegram: [https://t.me/nknorg](https://t.me/nknorg)
-
+Forum: [https://forum.nkn.org](https://forum.nkn.org)
