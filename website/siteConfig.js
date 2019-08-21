@@ -29,6 +29,7 @@ const siteConfig = {
   headerLinks: [
     //{search: true},
     {doc: 'home', label: 'Docs'},
+    {doc: 'command-line-wallet-cn', label: '文档'},
     {href: 'https://github.com/nknorg/nkn', label: 'GitHub'},
     {href: 'https://nkn.org', label: 'NKN'},
     {href: 'https://github.com/nknorg/nkn/wiki', label: 'Help'},
@@ -93,7 +94,6 @@ const siteConfig = {
   // Open Graph and Twitter card images.
   ogImage: 'img/undraw_online.svg',
   twitterImage: 'img/undraw_tweetstorm.svg',
-    
   twitterUsername: 'NKN_ORG',
   nknWebsiteUrl: 'https://nkn.org',
   nknForumUrl: 'https://forum.nkn.org',

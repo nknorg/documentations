@@ -17,5 +17,10 @@
     "FAQ": [
       "faq0"
     ]
+  },
+  "doc_cn": {
+    "API接口": [
+      "command-line-wallet-cn"
+    ]
   }
 }
