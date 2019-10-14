@@ -12,7 +12,9 @@
     "Protocol": [
         "client-address-scheme",
         "wallet-address-scheme",
-        "standard-json-format-wallat"
+        "standard-json-format-wallat",
+        "serialization-scheme",
+        "signature-chain"
     ],
     "FAQ": [
       "faq0"
