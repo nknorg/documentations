@@ -58,30 +58,30 @@
 <p>Signature chain (sigchain) is the core data structure in proof of relay. It's
 encoded in protobuf defined at
 <a href="https://github.com/nknorg/nkn/blob/master/pb/sigchain.proto">https://github.com/nknorg/nkn/blob/master/pb/sigchain.proto</a></p>
-<pre><code class="hljs">enum SigAlgo {
-  SIGNATURE = <span class="hljs-number">0</span><span class="hljs-comment">;</span>
-  VRF       = <span class="hljs-number">1</span><span class="hljs-comment">;</span>
+<pre><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">SigAlgo</span> </span>{
+  SIGNATURE = <span class="hljs-number">0</span>;
+  VRF       = <span class="hljs-number">1</span>;
 }
 
-message SigChainElem {
-  <span class="hljs-keyword">bytes </span>id                  = <span class="hljs-number">1</span><span class="hljs-comment">;</span>
-  <span class="hljs-keyword">bytes </span>next_pubkey         = <span class="hljs-number">2</span><span class="hljs-comment">;</span>
-  <span class="hljs-keyword">bool </span>mining               = <span class="hljs-number">3</span><span class="hljs-comment">;</span>
-  <span class="hljs-keyword">bytes </span>signature           = <span class="hljs-number">4</span><span class="hljs-comment">;</span>
-  SigAlgo sig_algo          = <span class="hljs-number">5</span><span class="hljs-comment">;</span>
-  <span class="hljs-keyword">bytes </span>vrf                 = <span class="hljs-number">6</span><span class="hljs-comment">;</span>
-  <span class="hljs-keyword">bytes </span>proof               = <span class="hljs-number">7</span><span class="hljs-comment">;</span>
+<span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">SigChainElem</span> </span>{
+  <span class="hljs-built_in">bytes</span> id                  = <span class="hljs-number">1</span>;
+  <span class="hljs-built_in">bytes</span> next_pubkey         = <span class="hljs-number">2</span>;
+  <span class="hljs-built_in">bool</span> mining               = <span class="hljs-number">3</span>;
+  <span class="hljs-built_in">bytes</span> signature           = <span class="hljs-number">4</span>;
+  SigAlgo sig_algo          = <span class="hljs-number">5</span>;
+  <span class="hljs-built_in">bytes</span> vrf                 = <span class="hljs-number">6</span>;
+  <span class="hljs-built_in">bytes</span> proof               = <span class="hljs-number">7</span>;
 }
 
-message SigChain {
-  uint32 nonce                = <span class="hljs-number">1</span><span class="hljs-comment">;</span>
-  uint32 data_size            = <span class="hljs-number">2</span><span class="hljs-comment">;</span>
-  <span class="hljs-keyword">bytes </span><span class="hljs-keyword">block_hash </span>           = <span class="hljs-number">3</span><span class="hljs-comment">;</span>
-  <span class="hljs-keyword">bytes </span>src_id                = <span class="hljs-number">4</span><span class="hljs-comment">;</span>
-  <span class="hljs-keyword">bytes </span>src_pubkey            = <span class="hljs-number">5</span><span class="hljs-comment">;</span>
-  <span class="hljs-keyword">bytes </span>dest_id               = <span class="hljs-number">6</span><span class="hljs-comment">;</span>
-  <span class="hljs-keyword">bytes </span>dest_pubkey           = <span class="hljs-number">7</span><span class="hljs-comment">;</span>
-  repeated SigChainElem elems = <span class="hljs-number">8</span><span class="hljs-comment">;</span>
+<span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">SigChain</span> </span>{
+  <span class="hljs-built_in">uint32</span> nonce                = <span class="hljs-number">1</span>;
+  <span class="hljs-built_in">uint32</span> data_size            = <span class="hljs-number">2</span>;
+  <span class="hljs-built_in">bytes</span> block_hash            = <span class="hljs-number">3</span>;
+  <span class="hljs-built_in">bytes</span> src_id                = <span class="hljs-number">4</span>;
+  <span class="hljs-built_in">bytes</span> src_pubkey            = <span class="hljs-number">5</span>;
+  <span class="hljs-built_in">bytes</span> dest_id               = <span class="hljs-number">6</span>;
+  <span class="hljs-built_in">bytes</span> dest_pubkey           = <span class="hljs-number">7</span>;
+  <span class="hljs-keyword">repeated</span> SigChainElem elems = <span class="hljs-number">8</span>;
 }
 </code></pre>
 <p>As shown above, a sigchain contains several metadata fields and a list of
