@@ -16,6 +16,15 @@
         "serialization-scheme",
         "signature-chain"
     ],
+    "CodeAnalysis": [
+        "code-analysis-transaction",
+        "code-analysis-header",
+        "code-analysis-block",
+        "code-analysis-blockchain",
+        "code-analysis-txpool",
+        "code-analysis-database",
+        "code-analysis-wallet"
+    ],
     "FAQ": [
       "faq0"
     ]
