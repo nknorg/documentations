@@ -252,13 +252,13 @@ Get a transaction by hash.
 
 ### getwsaddr
 
-Get a websocket address.
+Get a websocket address from client's public key.
 
 ```
 --> {
 		"jsonrpc": "2.0",
 		"method":  "getwsaddr",
-		"params": {"address":"NfyorGQHVBVHGSmg4XGPfCLmxPkRrwJkSu"},
+		"params": {"address":"a6c50a62142e107b3fbbe6f163522ce30e52bf45bd8a47762660265f141b6510"},
 		"id": 1
 	}
 <-- {
