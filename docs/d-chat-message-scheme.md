@@ -1,5 +1,5 @@
 ---
-id: d_chat-message-scheme
+id: d-chat-message-scheme
 title: NKN D-Chat Message Scheme
 ---
 
@@ -12,7 +12,7 @@ title: NKN D-Chat Message Scheme
 |id                   |String           |random uuid|
 |contentType*         |enum             |the type of content. values are: `text`/`image`/`audio`/`video`/`event[:custom_action]`/`customize`, you can replace `customize` with any custom type. `[:custom_action]` is an option, you can change it as needed.|
 |content              |String(JSON)     |message content in json format|
-|topic                |String           |`null/''/undefined` for PRIVATE chat, `${arbitrary identifier}.${64 length hex, usually pubkey}` for PRIVATE GROUP chat, else PUBLIC GROUP chat.|
+|topic                |String           |`null/''/undefined` for PRIVATE chat, `${arbitrary identifier}.${64 length hex pubkey}` for PRIVATE GROUP chat, else PUBLIC GROUP chat.|
 |timestamp            |long             |digital representation of time in milliseconds. for conversion to specific time in time zones around the world.|
 
 + (`*`)Indicates that the definition has been modified.
