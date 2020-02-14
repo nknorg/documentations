@@ -15,7 +15,7 @@
         "standard-json-format-wallat",
         "serialization-scheme",
         "signature-chain",
-        "d_chat-message-scheme"
+        "d-chat-message-scheme"
     ],
     "CodeAnalysis": [
         "code-analysis-transaction",
