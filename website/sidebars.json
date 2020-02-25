@@ -17,6 +17,9 @@
         "signature-chain",
         "d-chat-message-scheme"
     ],
+    "SDK": [
+        "nkn-sdk-js"
+    ],
     "CodeAnalysis": [
         "code-analysis-transaction",
         "code-analysis-header",
