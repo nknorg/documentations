@@ -6,10 +6,10 @@
     ],
     "API Reference": [
         "jsonrpc-api-reference",
-        "websocket-api-reference",
         "command-line-wallet"
     ],
     "Protocol": [
+        "nkn-session-protocol",
         "client-address-scheme",
         "wallet-address-scheme",
         "standard-json-format-wallat",
@@ -28,9 +28,6 @@
         "code-analysis-txpool",
         "code-analysis-database",
         "code-analysis-wallet"
-    ],
-    "FAQ": [
-      "faq0"
     ]
   },
   "doc_cn": {
