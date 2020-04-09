@@ -18,7 +18,9 @@
         "d-chat-message-scheme"
     ],
     "SDK": [
-        "nkn-sdk-js"
+        "nkn-sdk-js",
+        "nkn-sdk-go",
+        "nkn-sdk-gomobile"
     ],
     "CodeAnalysis": [
         "code-analysis-transaction",
