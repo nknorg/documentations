@@ -12,7 +12,7 @@
         "nkn-session-protocol",
         "client-address-scheme",
         "wallet-address-scheme",
-        "standard-json-format-wallat",
+        "wallet-json-format",
         "serialization-scheme",
         "signature-chain",
         "d-chat-message-scheme"
@@ -21,15 +21,6 @@
         "nkn-sdk-js",
         "nkn-sdk-go",
         "nkn-sdk-gomobile"
-    ],
-    "CodeAnalysis": [
-        "code-analysis-transaction",
-        "code-analysis-header",
-        "code-analysis-block",
-        "code-analysis-blockchain",
-        "code-analysis-txpool",
-        "code-analysis-database",
-        "code-analysis-wallet"
     ]
   },
   "doc_cn": {
