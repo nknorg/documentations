@@ -20,7 +20,8 @@
     "SDK": [
         "nkn-sdk-js",
         "nkn-sdk-go",
-        "nkn-sdk-gomobile"
+        "nkn-sdk-gomobile",
+        "nkn-sdk-java"
     ]
   },
   "doc_cn": {
