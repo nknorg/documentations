@@ -12,7 +12,7 @@ Here are some APIs to communicate with blockchain. These APIs are Compatible wit
 	* [getlatestblockheight](#getlatestblockheight)
 	* [getlatestblockhash](#getlatestblockhash)
 	* [getblockcount](#getblockcount)
-	* [getblock](#getblock) 
+	* [getblock](#getblock)
 	* [getblocktxsbyheight](#getblocktxsbyheight)
 	* [getconnectioncount](#getconnectioncount)
 	* [getrawmempool](#getrawmempool)
@@ -57,7 +57,7 @@ The syntax '-->' indicates data sent to Server, and '<--' indicates data sent to
 			"code":-32601,
 			"data":"The called method was not found on the server",
 			"message":"Method not found"
-		}, 
+		},
 		"id": 1
 	}
 ```
@@ -201,7 +201,7 @@ Get the transactions hashes in a block by block height.
 
 ### getconnectioncount
 
-Get the connection amount to this node. 
+Get the connection amount to this node.
 ```
 --> {
 		"jsonrpc": "2.0",
@@ -263,7 +263,12 @@ Get a websocket address from client's public key.
 	}
 <-- {
 		"jsonpc": "2.0",
-		"result": "127.0.0.1:30002",
+		"result": {
+			"addr": "1.2.3.4:30002",
+			"id": "4ca5a34892f5dfd67377f0d6820dc6d52a6f65fec8b507c3adcda1bafccbd18d",
+			"pubkey": "5de259e761036319700c3d9557be5b0a86858e3eac5b81ebab9d1810d2721db2",
+			"rpcAddr": "1.2.3.4:30003"
+	  },
 		"id": 1
 	}
 ```
@@ -365,4 +370,3 @@ Get chord information of this server.
 		"id": 1
 	}
 ```
-
