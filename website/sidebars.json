@@ -15,7 +15,8 @@
         "wallet-json-format",
         "serialization-scheme",
         "signature-chain",
-        "d-chat-message-scheme"
+        "d-chat-message-scheme",
+        "nkn-sdk-resolver"
     ],
     "SDK": [
         "nkn-sdk-js",
