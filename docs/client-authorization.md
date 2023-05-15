@@ -22,5 +22,5 @@ The main steps are here:
 
 The authorization process is shown as following sequence chart:
 
-![client authorization sequence](./images/client-auth.png)
+![client authorization sequence](/img/client-auth.png)
 

@@ -24,6 +24,17 @@
         "nkn-sdk-go",
         "nkn-sdk-gomobile",
         "nkn-sdk-java"
+    ],
+    "nConnect": [
+        "nconnect-overview",
+        "nconnect-get-started",
+        "nconnect-install-binary-release",
+        "nconnect-build-from-source",
+        "nconnect-knowledge-base",
+        "nconnect-tuna",
+        "nconnect-remote-desktop",
+        "nconnect-nas",
+        "nconnect-faq"
     ]
   },
   "doc_cn": {
