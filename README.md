@@ -19,12 +19,14 @@ $ git clone https://github.com/<YOUR NAME>/documentations.git
 ## Install dependencies
 
 ```sh
+$ cd website
 $ yarn install
 ```
 
 ## testing in localhost
 
 ```sh
+$ cd website
 $ yarn run start
 ```
 
