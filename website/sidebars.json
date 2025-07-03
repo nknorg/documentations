@@ -17,7 +17,8 @@
         "signature-chain",
         "d-chat-message-scheme",
         "nkn-sdk-resolver",
-        "client-authorization"
+        "client-authorization",
+        "transaction-types"
     ],
     "SDK": [
         "nkn-sdk-js",
