@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>database · NKN Docs</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## interface db.IStore"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="database · NKN Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nkn.org/"/><meta property="og:description" content="## interface db.IStore"/><meta property="og:image" content="https://docs.nkn.org/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nkn.org/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/favicon.png" alt="NKN Docs"/><h2 class="headerTitleWithLogo">NKN Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/home" target="_self">Docs</a></li><li class=""><a href="/docs/command-line-wallet-cn" target="_self">文档</a></li><li class=""><a href="https://github.com/nknorg/nkn" target="_self">GitHub</a></li><li class=""><a href="https://nkn.org" target="_self">NKN</a></li><li class=""><a href="https://github.com/nknorg/nkn/wiki" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">database</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="interface-dbistore"></a><a href="#interface-dbistore" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>interface db.IStore</h2>
+<ul>
+<li>Methods
+<ul>
+<li>BatchCommit() : error                            // commit item from batch buffer</li>
+<li>BatchDelete(key []byte) : error                  // delete item from batch buffer</li>
+<li>BatchPut(key []byte, value []byte) : error       // add item to batch buffer</li>
+<li>Close() : error                                  // close database</li>
+<li>Compact() : error                                // compact database</li>
+<li>Delete(key []byte) : error                       // delete item from database</li>
+<li>Get(key []byte) : []byte, error                  // get item from database</li>
+<li>Has(key []byte) : bool, error                    // check whether the item is in database</li>
+<li>NewBatch() : error                               // create new batch buffer</li>
+<li>NewIterator(prefix []byte) : IIterator           // new iterator of database</li>
+<li>Put(key []byte, value []byte) : error            // add item to database</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="struct-dbleveldbstore"></a><a href="#struct-dbleveldbstore" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct db.LevelDBStore</h2>
+<ul>
+<li>Fields</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">batch</td><td style="text-align:left">batch buffer</td></tr>
+<tr><td style="text-align:left">db</td><td style="text-align:left">the reference of leveldb object</td></tr>
+</tbody>
+</table>
+<ul>
+<li><p>Methods</p>
+<ul>
+<li>BatchCommit() : error</li>
+<li>BatchDelete(key []byte) : error</li>
+<li>BatchPut(key []byte, value []byte) : error</li>
+<li>Close() : error</li>
+<li>Compact() : error</li>
+<li>Delete(key []byte) : error</li>
+<li>Get(key []byte) : []byte, error</li>
+<li>Has(key []byte) : bool, error</li>
+<li>NewBatch() : error</li>
+<li>NewIterator(prefix []byte) : IIterator</li>
+<li>Put(key []byte, value []byte) : error</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="interace-dbiiterator"></a><a href="#interace-dbiiterator" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>interace db.IIterator</h2>
+<ul>
+<li><p>Methods</p>
+<ul>
+<li>First() : bool</li>
+<li>Key() : []byte</li>
+<li>Last() : bool</li>
+<li>Next() : bool</li>
+<li>Prev() : bool</li>
+<li>Release()</li>
+<li>Seek(key []byte) : bool</li>
+<li>Value() : []byte</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="struct-iterator"></a><a href="#struct-iterator" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct Iterator</h2>
+<ul>
+<li>Fields</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">iter</td><td style="text-align:left">an object that implements IIterator interface</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Methods
+<ul>
+<li>First() : bool</li>
+<li>Key() : []byte</li>
+<li>Last() : bool</li>
+<li>Next() : bool</li>
+<li>Prev() : bool</li>
+<li>Release()</li>
+<li>Seek(key []byte) : bool</li>
+<li>Value() : []byte</li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#interface-dbistore">interface db.IStore</a></li><li><a href="#struct-dbleveldbstore">struct db.LevelDBStore</a></li><li><a href="#interace-dbiiterator">interace db.IIterator</a></li><li><a href="#struct-iterator">struct Iterator</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><img src="/img/favicon.png" alt="Bowler" height="45"/><a href="https://nkn.org">NKN</a><a href="https://twitter.com/NKN_ORG">Twitter</a><a href="https://github.com/nknorg/nkn">GitHub</a><a href="https://forum.nkn.org">Forum</a></section><section class="copyright">Copyright © 2025 NKN | All rights reserved</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '4a0261289a8269108860d1988a7e48f6',
+                indexName: 'nkn',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

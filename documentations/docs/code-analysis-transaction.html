@@ -1,0 +1,331 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>transaction · NKN Docs</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## struct transaction.Transaction"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="transaction · NKN Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nkn.org/"/><meta property="og:description" content="## struct transaction.Transaction"/><meta property="og:image" content="https://docs.nkn.org/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nkn.org/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/favicon.png" alt="NKN Docs"/><h2 class="headerTitleWithLogo">NKN Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/home" target="_self">Docs</a></li><li class=""><a href="/docs/command-line-wallet-cn" target="_self">文档</a></li><li class=""><a href="https://github.com/nknorg/nkn" target="_self">GitHub</a></li><li class=""><a href="https://nkn.org" target="_self">NKN</a></li><li class=""><a href="https://github.com/nknorg/nkn/wiki" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">transaction</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="struct-transactiontransaction"></a><a href="#struct-transactiontransaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct transaction.Transaction</h2>
+<ul>
+<li>Variables</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Transaction</td><td style="text-align:left">Inherited from pb.Transaction</td></tr>
+<tr><td style="text-align:left">hash</td><td style="text-align:left">The digest of this Transaction</td></tr>
+<tr><td style="text-align:left">size</td><td style="text-align:left">The size of this Transaction</td></tr>
+<tr><td style="text-align:left">isSignatureVerified</td><td style="text-align:left">Whether this Transaction has been verified</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Methods
+<ul>
+<li>Marshal() : []byte, error                          // serialize transaction</li>
+<li>Unmarshal(buf []byte) : error                      // deserialization transaction</li>
+<li>DeserializeUnsigned(r io.Reader) : error           // deserialize unsigned transaction</li>
+<li>GetInfo() : []byte, error                          // get readable Json format of transaction</li>
+<li>GetMessage() : []byte                              // get byte slice of serialized unsigned transaction</li>
+<li>GetProgramHashes() : []Uint160, error              // get code hash of transacion</li>
+<li>GetPrograms() : []*pb.Program                      // get code of transaction</li>
+<li>GetSize() : uint32                                 // get size of transaction</li>
+<li>Hash() : Uint256                                   // get hash value of transaction</li>
+<li>SerializeUnsigned(w io.Writer) : error             // serialize unsigned transaction</li>
+<li>SetHash(hash Uint256)                              // set hash value to transaction</li>
+<li>SetPrograms(programs []*pb.Program)                // set codes to transaction</li>
+<li>ShortHash(salt []byte, size uint32) : []byte       // get short hash value of transaction</li>
+<li>ToArray() : []byte                                 // get byte slice of serialized transaction</li>
+<li>VerifySignature() : error                          // verify signature of transaction</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="struct-pbtransaction"></a><a href="#struct-pbtransaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct pb.Transaction</h2>
+<ul>
+<li>Variables</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">UnsignedTx</td><td style="text-align:left">Unsigned Transaction</td></tr>
+<tr><td style="text-align:left">Programs</td><td style="text-align:left">program and signature</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Methods
+<ul>
+<li>Generated by protobuf</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="struct-pbprogram"></a><a href="#struct-pbprogram" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct pb.Program</h2>
+<ul>
+<li>Variables</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Code</td><td style="text-align:left">program to program hash</td></tr>
+<tr><td style="text-align:left">Parameter</td><td style="text-align:left">signature</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Methods
+<ul>
+<li>Generated by protobuf</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="struct-pbunsignedtx"></a><a href="#struct-pbunsignedtx" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct pb.UnsignedTx</h2>
+<ul>
+<li>Variables</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Payload</td><td style="text-align:left">Payload of Transaction</td></tr>
+<tr><td style="text-align:left">Nonce</td><td style="text-align:left">Transaction nonce</td></tr>
+<tr><td style="text-align:left">Fee</td><td style="text-align:left">Transaction fee</td></tr>
+<tr><td style="text-align:left">Attributes</td><td style="text-align:left">Attributes</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Methods
+<ul>
+<li>Generated by protobuf</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="struct-pbpayload"></a><a href="#struct-pbpayload" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct pb.Payload</h2>
+<ul>
+<li>Variables</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Type</td><td style="text-align:left">PayloadType</td></tr>
+<tr><td style="text-align:left">Data</td><td style="text-align:left">Serialized Payload</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Methods
+<ul>
+<li>Generated by protobuf</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="interface-ipayload"></a><a href="#interface-ipayload" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>interface IPayload</h2>
+<ul>
+<li>interface</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Method</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Marshal</td><td style="text-align:left">Serialize method</td></tr>
+<tr><td style="text-align:left">Unmarshal</td><td style="text-align:left">Deserialize method</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="struct-pbcoinbase"></a><a href="#struct-pbcoinbase" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct pb.Coinbase</h2>
+<ul>
+<li>Variables</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Sender</td><td style="text-align:left">sender of Transaction</td></tr>
+<tr><td style="text-align:left">Recipient</td><td style="text-align:left">recipient of Transaction</td></tr>
+<tr><td style="text-align:left">Amount</td><td style="text-align:left">amount of NKN</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Methods
+<ul>
+<li>Generated by protobuf</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="struct-pbsigchaintxn"></a><a href="#struct-pbsigchaintxn" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct pb.SigChainTxn</h2>
+<ul>
+<li>Variables</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">SigChain</td><td style="text-align:left">signature chain</td></tr>
+<tr><td style="text-align:left">Submitter</td><td style="text-align:left">sender of sigChain</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Methods
+<ul>
+<li>Generated by protobuf</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="struct-pbregistername"></a><a href="#struct-pbregistername" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct pb.RegisterName</h2>
+<ul>
+<li>Variables</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Registrant</td><td style="text-align:left">sender of Transaction</td></tr>
+<tr><td style="text-align:left">Name</td><td style="text-align:left">name need to be registered</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Methods
+<ul>
+<li>Generated by protobuf</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="struct-pbsubscribe"></a><a href="#struct-pbsubscribe" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct pb.Subscribe</h2>
+<ul>
+<li>Variables</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Subscriber</td><td style="text-align:left">sender of Transaction</td></tr>
+<tr><td style="text-align:left">Identifier</td><td style="text-align:left">id</td></tr>
+<tr><td style="text-align:left">Topic</td><td style="text-align:left">topic</td></tr>
+<tr><td style="text-align:left">Bucket</td><td style="text-align:left">deprecated</td></tr>
+<tr><td style="text-align:left">Duration</td><td style="text-align:left">period of validity</td></tr>
+<tr><td style="text-align:left">Meta</td><td style="text-align:left">meta data</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Methods
+<ul>
+<li>Generated by protobuf</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="struct-pbunsubscribe"></a><a href="#struct-pbunsubscribe" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct pb.Unsubscribe</h2>
+<ul>
+<li>Variables</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Subscriber</td><td style="text-align:left">sender of Transaction</td></tr>
+<tr><td style="text-align:left">Identifier</td><td style="text-align:left">id</td></tr>
+<tr><td style="text-align:left">Topic</td><td style="text-align:left">topic</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Methods
+<ul>
+<li>Generated by protobuf</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="struct-pbtransferasset"></a><a href="#struct-pbtransferasset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct pb.TransferAsset</h2>
+<ul>
+<li>Variables</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Sender</td><td style="text-align:left">sender of Transaction</td></tr>
+<tr><td style="text-align:left">Recipient</td><td style="text-align:left">recipient of Transaction</td></tr>
+<tr><td style="text-align:left">Amount</td><td style="text-align:left">amount of NKN</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Methods
+<ul>
+<li>Generated by protobuf</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="struct-pbgenerateid"></a><a href="#struct-pbgenerateid" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct pb.GenerateID</h2>
+<ul>
+<li>Variables</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Public_key</td><td style="text-align:left">public key of sender</td></tr>
+<tr><td style="text-align:left">Registration_fee</td><td style="text-align:left">registration fee of transaction</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Methods
+<ul>
+<li>Generated by protobuf</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="struct-pbnanopay"></a><a href="#struct-pbnanopay" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct pb.NanoPay</h2>
+<ul>
+<li>Variables</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Sender</td><td style="text-align:left">sender of token</td></tr>
+<tr><td style="text-align:left">Recipient</td><td style="text-align:left">recipient of token</td></tr>
+<tr><td style="text-align:left">Id</td><td style="text-align:left">nanopay ID</td></tr>
+<tr><td style="text-align:left">Amount</td><td style="text-align:left">amount of NKN</td></tr>
+<tr><td style="text-align:left">Txn_expiration</td><td style="text-align:left">period of tx validity</td></tr>
+<tr><td style="text-align:left">Nano_pay_expiration</td><td style="text-align:left">period of nanopay validity</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Methods
+<ul>
+<li>Generated by protobuf</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="struct-pbissueasset"></a><a href="#struct-pbissueasset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>struct pb.IssueAsset</h2>
+<ul>
+<li>Variables</li>
+</ul>
+<table>
+<thead>
+<tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">Sender</td><td style="text-align:left">sender of transaction</td></tr>
+<tr><td style="text-align:left">Name</td><td style="text-align:left">name of token</td></tr>
+<tr><td style="text-align:left">Symbol</td><td style="text-align:left">symbol of token</td></tr>
+<tr><td style="text-align:left">Total_supply</td><td style="text-align:left">total supply</td></tr>
+<tr><td style="text-align:left">Precision</td><td style="text-align:left">precision of token</td></tr>
+</tbody>
+</table>
+<ul>
+<li>Methods
+<ul>
+<li>Generated by protobuf</li>
+</ul></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#struct-transactiontransaction">struct transaction.Transaction</a></li><li><a href="#struct-pbtransaction">struct pb.Transaction</a></li><li><a href="#struct-pbprogram">struct pb.Program</a></li><li><a href="#struct-pbunsignedtx">struct pb.UnsignedTx</a></li><li><a href="#struct-pbpayload">struct pb.Payload</a></li><li><a href="#interface-ipayload">interface IPayload</a></li><li><a href="#struct-pbcoinbase">struct pb.Coinbase</a></li><li><a href="#struct-pbsigchaintxn">struct pb.SigChainTxn</a></li><li><a href="#struct-pbregistername">struct pb.RegisterName</a></li><li><a href="#struct-pbsubscribe">struct pb.Subscribe</a></li><li><a href="#struct-pbunsubscribe">struct pb.Unsubscribe</a></li><li><a href="#struct-pbtransferasset">struct pb.TransferAsset</a></li><li><a href="#struct-pbgenerateid">struct pb.GenerateID</a></li><li><a href="#struct-pbnanopay">struct pb.NanoPay</a></li><li><a href="#struct-pbissueasset">struct pb.IssueAsset</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><img src="/img/favicon.png" alt="Bowler" height="45"/><a href="https://nkn.org">NKN</a><a href="https://twitter.com/NKN_ORG">Twitter</a><a href="https://github.com/nknorg/nkn">GitHub</a><a href="https://forum.nkn.org">Forum</a></section><section class="copyright">Copyright © 2025 NKN | All rights reserved</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '4a0261289a8269108860d1988a7e48f6',
+                indexName: 'nkn',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

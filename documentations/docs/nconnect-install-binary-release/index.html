@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Install nConnect Binary Release · NKN Docs</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Install nConnect on Windows"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Install nConnect Binary Release · NKN Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nkn.org/"/><meta property="og:description" content="## Install nConnect on Windows"/><meta property="og:image" content="https://docs.nkn.org/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nkn.org/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/favicon.png" alt="NKN Docs"/><h2 class="headerTitleWithLogo">NKN Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/home" target="_self">Docs</a></li><li class=""><a href="/docs/command-line-wallet-cn" target="_self">文档</a></li><li class=""><a href="https://github.com/nknorg/nkn" target="_self">GitHub</a></li><li class=""><a href="https://nkn.org" target="_self">NKN</a></li><li class=""><a href="https://github.com/nknorg/nkn/wiki" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>nConnect</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Home<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/home">Welcome</a></li><li class="navListItem"><a class="navItem" href="/docs/get-started">Get Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API Reference<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/jsonrpc-api-reference">JsonRPC API Reference</a></li><li class="navListItem"><a class="navItem" href="/docs/command-line-wallet">Command Line Wallet</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Protocol<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/nkn-session-protocol">NKN Session Protocol</a></li><li class="navListItem"><a class="navItem" href="/docs/client-address-scheme">NKN Client Address Scheme</a></li><li class="navListItem"><a class="navItem" href="/docs/wallet-address-scheme">NKN Wallet Address Scheme</a></li><li class="navListItem"><a class="navItem" href="/docs/wallet-json-format">NKN Wallet JSON Format (v2)</a></li><li class="navListItem"><a class="navItem" href="/docs/serialization-scheme">Serialization Scheme</a></li><li class="navListItem"><a class="navItem" href="/docs/signature-chain">Signature Chain</a></li><li class="navListItem"><a class="navItem" href="/docs/d-chat-message-scheme">NKN D-Chat Message Scheme</a></li><li class="navListItem"><a class="navItem" href="/docs/nkn-sdk-resolver">NKN SDK resolver protocol</a></li><li class="navListItem"><a class="navItem" href="/docs/client-authorization">NKN Client Authorization</a></li><li class="navListItem"><a class="navItem" href="/docs/transaction-types">Transaction Types</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">SDK<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/nkn-sdk-js">JavaScript SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/nkn-sdk-go">Go SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/nkn-sdk-gomobile">iOS/Android SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/nkn-sdk-java">Java SDK</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">nConnect<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/nconnect-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-get-started">Get Started</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nconnect-install-binary-release">Install nConnect Binary Release</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-build-from-source">Build nConnect from Source</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-knowledge-base">nConnect Knowledge Base</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-tuna">nConnect over Tuna, Getting Faster</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-remote-desktop">Remote Desktop</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-nas">nConnect for NAS</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-faq">nConnect FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Install nConnect Binary Release</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="install-nconnect-on-windows"></a><a href="#install-nconnect-on-windows" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install nConnect on Windows</h2>
+<p>Download nConnect from the nkn.org website:
+<a href="https://nkn.org/products/nconnect/">nConnect Download</a></p>
+<p>After downloading, install and run it. After starting it should look like this:</p>
+<p><img src="/img/nconnect/nconnect-win.png" alt="nConnect windows"></p>
+<p>Click on <strong>Add Server</strong>, it will show a QR code.
+Now you can use the nConnect mobile app to scan the QR code to synchronize server information, or copy and paste the nConnect Server link address.</p>
+<h2><a class="anchor" aria-hidden="true" id="installing-nconnect-on-linux"></a><a href="#installing-nconnect-on-linux" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing nConnect on Linux</h2>
+<ul>
+<li><p>Download the nConnect Linux binary release from the nConnect repository.
+You can always download the latest nConnect from the nConnect github repository:
+<a href="https://github.com/nknorg/nconnect/releases">nConnect release</a></p>
+<p>Let's download nConnect for Ubuntu:</p>
+<pre><code class="hljs"><span class="hljs-meta">$</span><span class="bash"> mkdir nconnect</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> nconnect</span>
+<span class="hljs-meta">$</span><span class="bash"> wget https://github.com/nknorg/nconnect/releases/latest/download/linux-amd64.tar.gz</span>
+<span class="hljs-meta">$</span><span class="bash"> tar xzvf linux-amd64.tar.gz</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> linux-amd64</span>
+</code></pre></li>
+<li><p>Get nConnect Server address:
+The nConnect Client connects to the nConnect Server using the server address. So first we get the server address as follows:</p>
+<pre><code class="hljs">$ ./nConnect -s --address
+nConnect.gzwiy<span class="hljs-number">5.4</span><span class="hljs-keyword">c</span><span class="hljs-number">01</span>b<span class="hljs-number">508</span>fd<span class="hljs-number">9e5432633</span><span class="hljs-keyword">c</span><span class="hljs-number">6</span>b<span class="hljs-number">098e6</span>a<span class="hljs-number">0</span>f<span class="hljs-number">166</span>fdfd<span class="hljs-number">6</span>a<span class="hljs-number">57</span>a<span class="hljs-number">2</span><span class="hljs-keyword">c</span><span class="hljs-number">2313</span>d<span class="hljs-number">08711</span>ef<span class="hljs-number">1</span><span class="hljs-keyword">c</span><span class="hljs-number">4</span>a<span class="hljs-number">4725</span>
+</code></pre>
+<p>Copy the string leady by <strong>nConnect.</strong> on your terminal, this is server's address. We need this address for client to connect server.</p></li>
+<li><p>Start nConnect Server:
+First, open port 8001 from the firewall, then start the nConnect Server:</p>
+<pre><code class="hljs">$ <span class="hljs-string">./nConnect</span> -s <span class="hljs-params">--admin-http</span> <span class="hljs-function">:8001</span>
+</code></pre>
+<p>Great, nConnect Server has started. Now you can open the nConnect Server web page:</p>
+<pre><code class="hljs"><span class="hljs-symbol">http:</span><span class="hljs-comment">//local-ip:8001</span>
+</code></pre>
+<p>Please replace <em>local-ip</em> with the local IP address of your own computer. You can see the home page like this:</p>
+<p><img src="/img/nconnect/nconnect-nkn-server-homepage.png" alt="nConnect server admin home page"></p>
+<p>On this web page we can see a QR code.</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="install-nconnect-on-your-mac"></a><a href="#install-nconnect-on-your-mac" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install nConnect on your Mac</h2>
+<p>Open the Apple Store, search for <strong>nConnect</strong>, you will see the result as</p>
+<p><img src="/img/nconnect/nconnect-macbook-store.jpg" alt="nConnect for MAC"></p>
+<p>Install it and open it, it is shown icon in the upper right corner, click it and you could see nConnect window:</p>
+<p><img src="/img/nconnect/nconnect-macbook-installed.jpg" alt="nConnect for Mac"></p>
+<h2><a class="anchor" aria-hidden="true" id="install-nconnect-on-your-android-phone"></a><a href="#install-nconnect-on-your-android-phone" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install nConnect on your Android phone</h2>
+<p>Download the nConnect app from Google Play.</p>
+<ul>
+<li><p>Install the nConnect app from Google Play
+Make sure you download the right nConnect which is published by NKN Labs, Inc. You can see the NKN logo as shown below:</p>
+<p><img src="/img/nconnect/nconnect-app.png" alt="nConnect App"></p></li>
+<li><p>Install nConnect App from nkn.org
+Download the APK from <a href="https://nkn.org/products/nconnect/">nConnect</a> and install it.</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="install-nconnect-on-your-apple-phone"></a><a href="#install-nconnect-on-your-apple-phone" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install nConnect on your Apple Phone</h2>
+<p>Download the nConnect App from the Apple Store.</p>
+<ul>
+<li><p>Install nConnect App
+Make sure you download the correct nConnect published by NKN Labs, Inc. You can see the NKN logo as shown below:</p>
+<p><img src="/img/nconnect/nconnect-app.png" alt="nConnect App"></p></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/nconnect-get-started"><span class="arrow-prev">← </span><span>Get Started</span></a><a class="docs-next button" href="/docs/nconnect-build-from-source"><span class="function-name-prevnext">Build nConnect from Source</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#install-nconnect-on-windows">Install nConnect on Windows</a></li><li><a href="#installing-nconnect-on-linux">Installing nConnect on Linux</a></li><li><a href="#install-nconnect-on-your-mac">Install nConnect on your Mac</a></li><li><a href="#install-nconnect-on-your-android-phone">Install nConnect on your Android phone</a></li><li><a href="#install-nconnect-on-your-apple-phone">Install nConnect on your Apple Phone</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><img src="/img/favicon.png" alt="Bowler" height="45"/><a href="https://nkn.org">NKN</a><a href="https://twitter.com/NKN_ORG">Twitter</a><a href="https://github.com/nknorg/nkn">GitHub</a><a href="https://forum.nkn.org">Forum</a></section><section class="copyright">Copyright © 2025 NKN | All rights reserved</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '4a0261289a8269108860d1988a7e48f6',
+                indexName: 'nkn',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>NKN Session Protocol · NKN Docs</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This document describes the session protocol used in NKN SDK. Most of the"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="NKN Session Protocol · NKN Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nkn.org/"/><meta property="og:description" content="This document describes the session protocol used in NKN SDK. Most of the"/><meta property="og:image" content="https://docs.nkn.org/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nkn.org/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/favicon.png" alt="NKN Docs"/><h2 class="headerTitleWithLogo">NKN Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/home" target="_self">Docs</a></li><li class=""><a href="/docs/command-line-wallet-cn" target="_self">文档</a></li><li class=""><a href="https://github.com/nknorg/nkn" target="_self">GitHub</a></li><li class=""><a href="https://nkn.org" target="_self">NKN</a></li><li class=""><a href="https://github.com/nknorg/nkn/wiki" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Protocol</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Home<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/home">Welcome</a></li><li class="navListItem"><a class="navItem" href="/docs/get-started">Get Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API Reference<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/jsonrpc-api-reference">JsonRPC API Reference</a></li><li class="navListItem"><a class="navItem" href="/docs/command-line-wallet">Command Line Wallet</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Protocol<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/docs/nkn-session-protocol">NKN Session Protocol</a></li><li class="navListItem"><a class="navItem" href="/docs/client-address-scheme">NKN Client Address Scheme</a></li><li class="navListItem"><a class="navItem" href="/docs/wallet-address-scheme">NKN Wallet Address Scheme</a></li><li class="navListItem"><a class="navItem" href="/docs/wallet-json-format">NKN Wallet JSON Format (v2)</a></li><li class="navListItem"><a class="navItem" href="/docs/serialization-scheme">Serialization Scheme</a></li><li class="navListItem"><a class="navItem" href="/docs/signature-chain">Signature Chain</a></li><li class="navListItem"><a class="navItem" href="/docs/d-chat-message-scheme">NKN D-Chat Message Scheme</a></li><li class="navListItem"><a class="navItem" href="/docs/nkn-sdk-resolver">NKN SDK resolver protocol</a></li><li class="navListItem"><a class="navItem" href="/docs/client-authorization">NKN Client Authorization</a></li><li class="navListItem"><a class="navItem" href="/docs/transaction-types">Transaction Types</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">SDK<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/nkn-sdk-js">JavaScript SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/nkn-sdk-go">Go SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/nkn-sdk-gomobile">iOS/Android SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/nkn-sdk-java">Java SDK</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">nConnect<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/nconnect-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-get-started">Get Started</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-install-binary-release">Install nConnect Binary Release</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-build-from-source">Build nConnect from Source</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-knowledge-base">nConnect Knowledge Base</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-tuna">nConnect over Tuna, Getting Faster</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-remote-desktop">Remote Desktop</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-nas">nConnect for NAS</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-faq">nConnect FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">NKN Session Protocol</h1></header><article><div><span><p>This document describes the session protocol used in NKN SDK. Most of the
+protocol described are abstracted into a reusable package ncp, which has
+official implementations in <a href="https://github.com/nknorg/ncp-go">Go</a> and
+<a href="https://github.com/nknorg/ncp-js">JavaScript</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="design-principle"></a><a href="#design-principle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Design Principle</h3>
+<p>The session mode is designed to natively work with multiple concurrent path to
+greatly enhance reliability and performance. The number of concurrent path
+should be configurable. Arbitrary failure of any but not all path should not
+affect the correctness and completeness of data transmitted (but may affect the
+performance).</p>
+<p>The two participates of a session should negotiate the window size and the
+concurrent path to use with each other to make sure as few packets are wasted as
+possible.</p>
+<p>The two participates of a session should be able to know whether each other is
+online or not when session is established. (The next one is to be decided and
+might be related to NKP-0019) After session is established, they should be able
+to know if each other is still online and session is still active using optional
+keepalive message.</p>
+<h3><a class="anchor" aria-hidden="true" id="protobuf-change"></a><a href="#protobuf-change" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Protobuf Change</h3>
+<p>A new payload type <code>SESSION</code> is added:</p>
+<pre><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">PayloadType</span> {</span>
+  BINARY = <span class="hljs-number">0</span>;
+  TEXT = <span class="hljs-number">1</span>;
+  ACK = <span class="hljs-number">2</span>;
+  SESSION = <span class="hljs-number">3</span>;
+}
+</code></pre>
+<p>When payload type is session, field <code>pid</code> will be treated as session id and
+should be unique per address pair, and field <code>reply_to_pid</code> should always be set
+to zero value (i.e. not set).</p>
+<p>A new pb message <code>SessionData</code> is added:</p>
+<pre><code class="hljs">message Packet {
+  <span class="hljs-built_in">uint</span>32 sequence_id = <span class="hljs-number">1</span>;
+  bytes data = <span class="hljs-number">2</span>;
+  repeated <span class="hljs-built_in">uint</span>32 ack_start_seq = <span class="hljs-number">3</span>;
+  repeated <span class="hljs-built_in">uint</span>32 ack_seq_count = <span class="hljs-number">4</span>;
+  <span class="hljs-built_in">uint</span>64 bytes_read = <span class="hljs-number">5</span>;
+  repeated <span class="hljs-built_in">string</span> client_ids = <span class="hljs-number">6</span>;
+  <span class="hljs-built_in">uint</span>32 window_size = <span class="hljs-number">7</span>;
+  <span class="hljs-built_in">uint</span>32 mtu = <span class="hljs-number">8</span>;
+  <span class="hljs-built_in">bool</span> close = <span class="hljs-number">9</span>;
+  <span class="hljs-built_in">bool</span> handshake = <span class="hljs-number">10</span>;
+}
+</code></pre>
+<p>A few notes:</p>
+<ul>
+<li><p><code>sequence_id</code> of data packet starts with 1 to avoid using the zero value of
+protobuf. <code>sequence_id</code> is circular, so the next value after max_uint_32 is 1.</p></li>
+<li><p>For ack packet, either <code>ack_start_seq</code> or <code>ack_seq_count</code> could be pb zero
+value, but not both. If both of them have non zero value (length &gt; 0), then
+their length must be identical. If <code>ack_start_seq</code> has zero value but
+<code>ack_seq_count</code> has non zero value, then <code>ack_start_seq</code> will be filled with
+an array with the same length as <code>ack_seq_count</code>, but value all equals 1. If
+<code>ack_seq_count</code> has zero value but <code>ack_start_seq</code> has non zero value, then
+<code>ack_seq_count</code> will be filled with an array with the same length as
+<code>ack_start_seq</code>, but value all equals 1. The length of <code>ack_start_seq</code> and
+<code>ack_seq_count</code> should not be greater than 32. After <code>ack_start_seq</code> and
+<code>ack_seq_count</code> are filled, they represent a few ranges of sequence id to be
+acknowledged, where <code>ack_start_seq</code> represents the start sequence id of each
+range, and <code>ack_seq_count</code> represents the number of consecutive sequence id to
+be acknowledged.</p></li>
+</ul>
+<p>There will be multiple types of <code>SessionData</code> depending on session state and
+which fields are (not) protobuf zero value:</p>
+<ol>
+<li><p>handshake packet: <code>handshake</code> is not zero value.</p></li>
+<li><p>data packet: when session is in established state and <code>sequence_id</code> is not
+zero value.</p></li>
+<li><p>ack packet: when session is in established state and <code>ack_start_seq</code>,
+<code>ack_seq_count</code> are not zero value. Typically ack packet will also have
+<code>bytes_read</code> set to non zero value.</p></li>
+<li><p>bytes read update packet: only <code>bytes_read</code> is not zero value. Note that
+other types of packet may also have <code>bytes_read</code> set to non zero value.</p></li>
+<li><p>close packet: <code>close</code> is not zero value.</p></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="create-clients"></a><a href="#create-clients" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Clients</h3>
+<p>We use the multiclient protocol to create a series of nkn clients with different
+identifier prefix <code>__i__</code> where <code>i</code> is integer starts with 0. For example, a nkn
+address <code>id.pk</code> will be converted to <code>__0__.id.pk</code>, <code>__1__.id.pk</code>,
+<code>__2__.id.pk</code>, etc. User may optionally choose to keep the original identifier
+(identifier prefix &quot;&quot;) and include client with original address <code>id.pk</code> into the
+clients to use.</p>
+<h3><a class="anchor" aria-hidden="true" id="establish-a-session"></a><a href="#establish-a-session" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Establish a Session</h3>
+<p>When Alice wants to initialize (dial) a session with Bob, she creates a session
+using default or user configured value and puts the session in session map. Then
+she creates a handshake packet, which is a SessionData packet with the following
+fields:</p>
+<ul>
+<li><p><code>handshake</code>: set to true.</p></li>
+<li><p><code>client_ids</code>: a list of identifier prefix Alice will use, e.g. <code>[&quot;&quot;, &quot;__0__&quot;, &quot;__1__&quot;, &quot;__2__&quot;, …]</code></p></li>
+<li><p><code>window_size</code>: Alice's session receive window size in bytes (last unread
+received - first unread received)</p></li>
+<li><p><code>mtu</code>: Alice's session receive mtu</p></li>
+</ul>
+<p>The <code>Payload</code> containing the handshake packet will have payload type set to
+session, and <code>pid</code> set to 8 random bytes. The <code>pid</code> should be unique for a given
+remote address, otherwise packets will be treated as the same session.</p>
+<p>At this time Alice does not know which identifier prefix Bob will use yet, so
+Alice will send the packet to Bob's based NKN address + an identifier prefix
+list. The list might be configured when user calls dialing method, while by
+default all identifier prefix Alice is using will be used.</p>
+<p>When Bob receives the handshake packet, he first checks if the session id (<code>pid</code>
+of <code>Payload</code> message) of the remote (Alice's) address exists. If session does
+not exist, a new session will be created, and the following fields will be
+adjusted based on Alice's handshake packet:</p>
+<ul>
+<li><p>a list of virtual connections where <code>len(connections) = min(len(local identifier prefix list), len(remote identifier prefix list))</code>, and i-th
+connection will use i-th local identifier prefix and i-th remote identifier
+prefix.</p></li>
+<li><p>send window size will be <code>min(local send window size, remote receive window size)</code></p></li>
+<li><p>send mtu will be <code>min(local send mtu, remote receive mtu)</code></p></li>
+</ul>
+<p>After session is created, it will be hold in a queue until user called accept
+method to indicate that user wants to accept a session. Then the first session
+in queue will be taken out, send back to Alice a handshake packet with the same
+fields and Bob's value using ALL connections of the session (to enhance
+reliability). The session will be marked as <code>established</code> on Bob's side,
+returned to user and become ready to use.</p>
+<p>When Alice receives back the handshake packet from Bob, she will find the
+session from session map and handle the handshake packet in the same way as Bob.
+Then the session is marked as <code>established</code> on Alice's side, returned to user
+and become ready to use.</p>
+<h3><a class="anchor" aria-hidden="true" id="send-data"></a><a href="#send-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Send Data</h3>
+<p>When a session is established, it's fully duplex and both side handle send and
+receive concurrently. For simplicity, we will assume Alice sends data while Bob
+receives. The other direction works the same way.</p>
+<p>Each session maintains a sliding window as send window, which keeps track of the
+ack status of a consecutive sequence id list and the packet data if the packet
+has not been acknowledged. The size of the window is defined by the total size
+of data sent + size of data in send buffer - total size of data read by
+receiver. In other words, it's the max size of receiver's receive buffer usage
+if receiver does not read any data from the session since now.</p>
+<p>Each session has two modes: stream mode or non stream mode. This should be
+predefined on both side (NOT negotiated during session handshake) because it
+affects how session read and write works. In stream mode, data passed in by
+session write method might be split into multiple packets or merged into one
+packets, so there is no max length requirement on write data length or read
+buffer size. In non-stream mode, data passed through session write method will
+be send by a single packet and will not be split or merged. So the data length
+cannot be greater than negotiated mtu, and read buffer size should be greater
+than negotiated mtu.</p>
+<p>When Alice calls session write method, it waits for available send window space.
+In stream mode, it waits for any send window, and if the available size is not
+enough for whole data, it append partial data first, and wait for the rest until
+all data are put into send buffer. In non-stream mode, it waits until the whole
+data fits into available send window.</p>
+<p>When send window is available, data are first appended into send buffer (a byte
+array whose size equals session mtu). In stream mode, buffer will be flushed
+(send by NKN client) when it's full, and also at a fixed time interval. In
+non-stream mode, send buffer will be flushed whenever data is put into buffer.</p>
+<p>When data is put into send buffer, it uses len(data) space of the send window.
+The send window will slide forward only when receiving acknowledgement that more
+bytes are read by receiver. When window slide forward, it will slide until the
+first sequence id in window is unacknowledged.</p>
+<p>When send buffer is flushed, one (and only one) random available connection
+(connection availability defined later) will fetch the job and send data to the
+connection remote address. If no connection is availability, flush will wait
+until one become availability.</p>
+<p>Connections serve as the workers that send the packets. As mentioned earlier,
+each connection has a fixed local client and remote client address. In addition,
+each connection independently maintains and updates a conn send window (but the
+unit is packets, NOT bytes) and retransmission timeout (rto) because different
+connections might have very different stats. Conn send window is defined by
+number of packets sent by this conn, but has not been acknowledged yet. Packets
+in a conn send window does NOT need to be consecutive.</p>
+<p>A conn has the following send loop: when conn has available send window space,
+it first try to get a packet from session resend queue, which is shared by all
+connections of the session. If no packet needs to be resent, it become available
+for sending new packet and will try to send data from session send buffer. If
+either of these two data are available, it sends the data, increment conn send
+window used, and record the sent time.</p>
+<p>A conn has the following check timeout loop: when a packet is sent for more than
+rto time but has not received ack, it will be considered timeout, and the packet
+will be put into the session resend queue. Also, conn send window will be
+halved, but cannot be smaller than min conn send window size.</p>
+<p>When a session receives an ack, it will pass it to all connections. Each conn
+will check if he has sent the packet. If conn has sent the packet and it has not
+been timeout, conn send window size will be increment by 1, but cannot be
+greater than max conn send window size. Also, regardless of whether the packet
+is timeout or not, conn send window will recover by 1; conn will compute the
+round trip time (rtt) since sent the packet, and update conn rto using:</p>
+<pre><code class="hljs">rto = rto + tanh((<span class="hljs-number">3</span> * rtt - rto) / <span class="hljs-number">1000</span>ms) * <span class="hljs-number">100</span>ms
+</code></pre>
+<p>but rto cannot be greater than max conn rto. This formula tries to fix rto at 3</p>
+<ul>
+<li>rtt, exponentially approaching 3 * rtt when diff(rto, 3 * rtt) is small for
+fast correction, and linearly approach when diff(rto, 3 * rtt) is large to avoid
+too much change caused by outlier.</li>
+</ul>
+<p>The rational behind this formula is that, because NKN client to client
+connection is an overlay connection, and each hop is already transmitting data
+using TCP, thus having flow control, congestion control, etc. The only thing we
+need to do is using a proper conn send window, and estimate timeout using
+measured rtt. I also tried Jacobson/Karels algorithm but it leads to quite a lot
+&quot;timeout&quot;, (I think) because that latency is already affected by TCP connections
+along the way, so the assumption of of the algorithm no longer holds. Similarly,
+for the conn send window, we choose exponentially increase and decrease because
+instead of using it for congestion control, we use it to avoid dispatching too
+much workload to congested connections and thus affect session throughput. I
+also tried TCP-like linear increase and exponentially decrease but it works not
+so well either.</p>
+<h3><a class="anchor" aria-hidden="true" id="receive-data"></a><a href="#receive-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Receive Data</h3>
+<p>When any of Bob's clients receives a NKN packet, he first checks if payload type
+is session. If so it will be handled as session packet, otherwise non-session
+packet. For the session packet, if it's an unknown (remote addr, session id)
+combo (not found in session map), then it will be treated as a new session: a
+session will be created and stored in session map. When session is created or
+get from session map, the received packet will be passed to session for
+handling, with the following order:</p>
+<ul>
+<li><p>If session is already closed, return error.</p></li>
+<li><p>If <code>SessionData.close</code> is true, handle it as close packet (will be described
+later).</p></li>
+<li><p>If session has not been established, and the <code>sequence_id</code>, <code>ack_start_seq</code>,
+<code>ack_seq_count</code> field are all pb zero value, then handle it as handshake
+packet (as described before).</p></li>
+<li><p>If session is already established, and either <code>ack_start_seq</code> or
+<code>ack_seq_count</code> have non zero value, then handle it as ack packet (as
+described before). After handling ack packet, the packet might still be
+handled as data packet if the next condition is met.</p></li>
+<li><p>If session is already established, and <code>sequence_id</code> is not zero value, then
+handle it as data packet (will be described later)</p></li>
+</ul>
+<p>When Bob handles a data packet, he checks if data size is less than mtu, and
+puts the data in receive window if sequence id is not earlier than window start
+seq, data not received yet, and receive window is not full. If the data sequence
+id equals the first receive window start sequence id, data become available for
+user to read. Regardless of whether sequence id is earlier than window start
+seq, Bob should send back ack packet to Alice for the sequence id. Ack should be
+sent back using the same connection that receives data. To reduce ack packet
+count, connection should not send ack immediately. Instead, each conn should
+buffer ack that needs to be sent, aggregate ack greedily into as few packets as
+possible (as long as the requirements in protobuf section is satisfied), and
+send ack on a regularly basis (less frequent than data flush interval).</p>
+<p>Each ack packet should also include <code>bytes_read</code> field which is set to the
+current session bytes read, which increases when user call session <code>read</code> and
+data is removed from receive buffer. In addition, if some bytes are read but no
+<code>bytes_read</code> is sent to sender for a while (e.g. receiver calls <code>read</code> after
+receive window if full), then receiver should send a packet containing only
+<code>bytes_read</code> field to inform sender about bytes read update. Such a packet
+should be sent by all available connection to ensure delivery.</p>
+<h3><a class="anchor" aria-hidden="true" id="close-session"></a><a href="#close-session" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Close Session</h3>
+<p>Either party of a session can close a session by sending a close message using
+all connections available to increase reliability. Before sending close message
+and closing the session, packets in send buffer should be sent at best effort.
+The other party who received close packet should also flush send buffer at best
+effort.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/command-line-wallet"><span class="arrow-prev">← </span><span>Command Line Wallet</span></a><a class="docs-next button" href="/docs/client-address-scheme"><span>NKN Client Address Scheme</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><img src="/img/favicon.png" alt="Bowler" height="45"/><a href="https://nkn.org">NKN</a><a href="https://twitter.com/NKN_ORG">Twitter</a><a href="https://github.com/nknorg/nkn">GitHub</a><a href="https://forum.nkn.org">Forum</a></section><section class="copyright">Copyright © 2025 NKN | All rights reserved</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '4a0261289a8269108860d1988a7e48f6',
+                indexName: 'nkn',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

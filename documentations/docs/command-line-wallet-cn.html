@@ -1,0 +1,475 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>命令行钱包nknc使用指南 · NKN Docs</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="nknc 是nknd的一个命令行钱包。"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="命令行钱包nknc使用指南 · NKN Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nkn.org/"/><meta property="og:description" content="nknc 是nknd的一个命令行钱包。"/><meta property="og:image" content="https://docs.nkn.org/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nkn.org/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/favicon.png" alt="NKN Docs"/><h2 class="headerTitleWithLogo">NKN Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/home" target="_self">Docs</a></li><li class="siteNavGroupActive siteNavItemActive"><a href="/docs/command-line-wallet-cn" target="_self">文档</a></li><li class=""><a href="https://github.com/nknorg/nkn" target="_self">GitHub</a></li><li class=""><a href="https://nkn.org" target="_self">NKN</a></li><li class=""><a href="https://github.com/nknorg/nkn/wiki" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>API接口</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API接口<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/docs/command-line-wallet-cn">命令行钱包nknc使用指南</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">命令行钱包nknc使用指南</h1></header><article><div><span><p>nknc 是nknd的一个命令行钱包。</p>
+<h2><a class="anchor" aria-hidden="true" id="contents"></a><a href="#contents" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contents</h2>
+<ul>
+<li><a href="#帮助">帮助</a></li>
+<li><a href="#版本">版本</a></li>
+<li><a href="#区块链信息">区块链信息</a>
+<ul>
+<li><a href="#查询区块">查询区块</a></li>
+<li><a href="#查询交易">查询交易</a></li>
+<li><a href="#查询当前区块哈希">查询当前区块哈希</a></li>
+<li><a href="#查询当前总区块数">查询当前总区块数</a></li>
+<li><a href="#查询节点连接信息">查询节点连接信息</a></li>
+<li><a href="#查询节点状态">查询节点状态</a></li>
+<li><a href="#查询节点邻居">查询节点邻居</a></li>
+<li><a href="#查询chord邻居信息">查询chord邻居信息</a></li>
+<li><a href="#查询节点版本">查询节点版本</a></li>
+<li><a href="#查询余额">查询余额</a></li>
+<li><a href="#查询当前nonce">查询当前nonce</a></li>
+</ul></li>
+<li><a href="#资产管理">资产管理</a>
+<ul>
+<li><a href="#转账">转账</a></li>
+</ul></li>
+<li><a href="#钱包">钱包</a>
+<ul>
+<li><a href="#创建钱包">创建钱包</a></li>
+<li><a href="#查询钱包">查询钱包</a></li>
+<li><a href="#更改密码">更改密码</a></li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="帮助"></a><a href="#帮助" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>帮助</h2>
+<p>获取nknc的帮助。</p>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> <span class="hljs-params">--help</span>
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">NAME:
+   nknc - command line<span class="hljs-built_in"> tool </span><span class="hljs-keyword">for</span> blockchain
+
+USAGE:
+   nknc [global options] command [command options] [args]
+
+VERSION:
+   v1.0.0-alpha-80-g93ba
+
+COMMANDS:
+     asset      asset registration, issuance <span class="hljs-keyword">and</span> transfer
+     <span class="hljs-builtin-name">debug</span>      blockchain node debugging
+     <span class="hljs-builtin-name">info</span>       show blockchain information
+     name       name registration
+     sigchain   signature chain operation
+     subscribe  subscribe topic
+     wallet    <span class="hljs-built_in"> user </span>wallet operation
+     help, h    Shows a list of commands <span class="hljs-keyword">or</span> help <span class="hljs-keyword">for</span> one command
+
+GLOBAL OPTIONS:
+   --ip value     node<span class="hljs-string">'s ip address (default: "localhost")
+   --port value   node'</span>s RPC<span class="hljs-built_in"> port </span>(default: <span class="hljs-string">"30003"</span>)
+   --help, -h     show help
+   --version, -v  <span class="hljs-builtin-name">print</span> the version
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="版本"></a><a href="#版本" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>版本</h2>
+<p>获取nknc的版本信息。</p>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> <span class="hljs-params">--version</span>
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">nknc version v1<span class="hljs-number">.0</span><span class="hljs-number">.0</span>-alpha<span class="hljs-number">-80</span>-g93ba
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="区块链信息"></a><a href="#区块链信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>区块链信息</h2>
+<p>查询区块链的信息。</p>
+<pre><code class="hljs">NAME:
+   nknc <span class="hljs-builtin-name">info</span> - show blockchain information
+
+USAGE:
+   nknc <span class="hljs-builtin-name">info</span> [command options] [args]
+
+DESCRIPTION:
+   With nknc info, you could look up blocks, transactions, etc.
+
+OPTIONS:
+   --blockhash value, -b value  hash <span class="hljs-keyword">for</span> querying a block
+   --txhash value, -t value     hash <span class="hljs-keyword">for</span> querying a transaction
+   --latestblockhash            latest block hash
+   --height value               block height <span class="hljs-keyword">for</span> querying a block (default: -1)
+   --blockcount, -c             block number <span class="hljs-keyword">in</span> blockchain
+   --connections               <span class="hljs-built_in"> connection </span>count
+   --neighbor                  <span class="hljs-built_in"> neighbor </span>information of current node
+   --ring                       chord ring information of current node
+   --state, -s                  current node state
+   --nodeversion, -v            version of connected remote node
+   --balance value              balance of a<span class="hljs-built_in"> address
+</span>   --nonce value                nonce of a<span class="hljs-built_in"> address
+</span></code></pre>
+<h3><a class="anchor" aria-hidden="true" id="查询区块"></a><a href="#查询区块" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询区块</h3>
+<p>使用区块哈希或者区块高度获得区块。如果使用远程节点，需要在nknc后面使用<em><code>--ip and --port</code></em>参数。</p>
+<p>命令:</p>
+<pre><code class="hljs">./nknc <span class="hljs-meta">info</span> --<span class="hljs-keyword">blockhash </span><span class="hljs-number">3320281</span>d4030543abadda4584471ed5174eee3fa7d9152921cbc8917a60a2de6
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"hash"</span>:<span class="hljs-string">"5f85d1286801c2f1129a02b0b19a3312f8113aaa073b5987346c59e27a12bdc6"</span>,
+        <span class="hljs-attr">"header"</span>:...
+        <span class="hljs-string">"transactions"</span>:...
+    },
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> info <span class="hljs-params">--height</span> 19125
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"hash"</span>:<span class="hljs-string">"5f85d1286801c2f1129a02b0b19a3312f8113aaa073b5987346c59e27a12bdc6"</span>,
+        <span class="hljs-attr">"header"</span>:...
+        <span class="hljs-string">"transactions"</span>:...
+    },
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="查询交易"></a><a href="#查询交易" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询交易</h3>
+<p>使用交易哈希查询交易。如果使用远程节点，需要在nknc后面使用<em><code>--ip and --port</code></em>参数。</p>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> info <span class="hljs-params">--txhash</span> dd54451ab43ac24b009a84af4005c0e5758bd8a5696e2da33d823695e20ec4e1
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"hash"</span>:<span class="hljs-string">"dd54451ab43ac24b009a84af4005c0e5758bd8a5696e2da33d823695e20ec4e1"</span>,
+        <span class="hljs-attr">"txType"</span>:...
+        <span class="hljs-string">"payloadData"</span>:...
+        <span class="hljs-string">"attributes"</span>:...
+        ...
+    },
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="查询当前区块哈希"></a><a href="#查询当前区块哈希" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询当前区块哈希</h3>
+<p>获取当前的区块哈希。如果使用远程节点，需要在nknc后面使用<em><code>--ip and --port</code></em>参数。</p>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> info <span class="hljs-params">--latestblockhash</span>
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"hash"</span>: <span class="hljs-string">"3149000d7a0573915fea8f48773b19d12e812b059221cba746117befad26c09c"</span>,
+        <span class="hljs-attr">"height"</span>: <span class="hljs-number">19168</span>
+    },
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="查询当前总区块数"></a><a href="#查询当前总区块数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询当前总区块数</h3>
+<p>查询当前的区块总数。如果使用远程节点，需要在nknc后面使用<em><code>--ip and --port</code></em>参数。</p>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> info <span class="hljs-params">--latestblockhash</span>
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-number">19173</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="查询节点连接信息"></a><a href="#查询节点连接信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询节点连接信息</h3>
+<p>查询当前节点的连接信息。如果使用远程节点，需要在nknc后面使用<em><code>--ip and --port</code></em>参数。</p>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> info <span class="hljs-params">--connections</span>
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-number">53</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="查询节点状态"></a><a href="#查询节点状态" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询节点状态</h3>
+<p>查询当前节点的状态。如果使用远程节点，需要在nknc后面使用<em><code>--ip and --port</code></em>参数。</p>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> info <span class="hljs-params">--state</span>
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"d7604de9aa22e2626a690fb0b3ec2c4ef4c790d73679e56ce0d5fa2f77befba0"</span>,
+        <span class="hljs-attr">"height"</span>: <span class="hljs-number">19186</span>,
+        <span class="hljs-attr">"currTimeStamp"</span>: <span class="hljs-number">1555561990</span>,
+        <span class="hljs-attr">"addr"</span>: ...
+        <span class="hljs-string">"relayMessageCount"</span>: ...
+        <span class="hljs-string">"syncState"</span>: ...
+        ...
+    }
+    <span class="hljs-string">"id"</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="查询节点邻居"></a><a href="#查询节点邻居" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询节点邻居</h3>
+<p>查询当前节点的邻居信息。如果使用远程节点，需要在nknc后面使用<em><code>--ip and --port</code></em>参数。</p>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> info <span class="hljs-params">--neighbor</span>
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: [{
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"d25a3ce5376bbc8bd1b3fbb103cef4a4621ce99ade71093d3664494b49437116"</span>,
+        <span class="hljs-attr">"height"</span>: <span class="hljs-number">19198</span>,
+        <span class="hljs-attr">"addr"</span>: ...
+        <span class="hljs-string">"syncState"</span>: ...
+        <span class="hljs-string">"isOutbound"</span>: ...
+        ...
+    },
+    ...]
+    <span class="hljs-string">"id"</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="查询chord邻居信息"></a><a href="#查询chord邻居信息" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询chord邻居信息</h3>
+<p>查询当前节点的chord环信息。如果使用远程节点，需要在nknc后面使用<em><code>--ip and --port</code></em>参数。</p>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> info <span class="hljs-params">--ring</span>
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">{
+    <span class="hljs-string">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-string">"result"</span>: {
+        <span class="hljs-string">"localNode"</span>: <span class="hljs-meta">{...}</span>
+        <span class="hljs-string">"successors"</span>: [...]
+        <span class="hljs-string">"predecessors"</span>: [...]
+        <span class="hljs-string">"fingerTable"</span>: <span class="hljs-meta">{...}</span>
+    },
+    <span class="hljs-string">"id"</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="查询节点版本"></a><a href="#查询节点版本" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询节点版本</h3>
+<p>查询当前节点的版本。如果使用远程节点，需要在nknc后面使用<em><code>--ip and --port</code></em>参数。</p>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> info <span class="hljs-params">--nodeversion</span>
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"v1.0.0-alpha-82-g5774"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="查询余额"></a><a href="#查询余额" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询余额</h3>
+<p>查询一个地址的余额。如果使用远程节点，需要在nknc后面使用<em><code>--ip and --port</code></em>参数。</p>
+<p>命令:</p>
+<pre><code class="hljs">./nknc <span class="hljs-meta">info</span> --<span class="hljs-keyword">balance </span>NKNQ83xc8zQNEE6WBDKm7tZrLwoMwAq4c4jo
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"amount"</span>: <span class="hljs-string">"0"</span>
+    },
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="查询当前nonce"></a><a href="#查询当前nonce" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询当前nonce</h3>
+<p>查询一个地址的转账nonce。请使用&quot;nonceInTxPool&quot;项的值作为nonce进行转账。如果使用远程节点，需要在nknc后面使用<em><code>--ip and --port</code></em>参数。</p>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> info <span class="hljs-params">--nonce</span> NKNQ83xc8zQNEE6WBDKm7tZrLwoMwAq4c4jo
+</code></pre>
+<p>result:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"currentHeight"</span>: <span class="hljs-number">5850</span>,
+        <span class="hljs-attr">"nonce"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"nonceInTxPool"</span>: <span class="hljs-number">0</span>
+    },
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="资产管理"></a><a href="#资产管理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>资产管理</h2>
+<p>用于操作资产。</p>
+<pre><code class="hljs"><span class="hljs-keyword">NAME</span>:
+   nknc asset - asset registration, issuance and <span class="hljs-built_in">transfer</span>
+
+USAGE:
+   nknc asset [command options] [args]
+
+DESCRIPTION:
+   With nknc asset, you could control <span class="hljs-keyword">assert</span> through transaction.
+
+OPTIONS:
+   --<span class="hljs-built_in">transfer</span>, -t              <span class="hljs-built_in">transfer</span> asset
+   --wallet <span class="hljs-keyword">value</span>, -w <span class="hljs-keyword">value</span>    wallet <span class="hljs-keyword">name</span> (<span class="hljs-keyword">default</span>: <span class="hljs-string">"wallet.dat"</span>)
+   --password <span class="hljs-keyword">value</span>, -p <span class="hljs-keyword">value</span>  wallet password
+   --to <span class="hljs-keyword">value</span>                  asset to whom
+   --<span class="hljs-keyword">value</span> <span class="hljs-keyword">value</span>, -v <span class="hljs-keyword">value</span>     asset amount
+   --fee <span class="hljs-keyword">value</span>, -f <span class="hljs-keyword">value</span>       transaction fee
+   --nonce <span class="hljs-keyword">value</span>               nonce (<span class="hljs-keyword">default</span>: <span class="hljs-number">0</span>)
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="转账"></a><a href="#转账" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>转账</h3>
+<p>给其他地址转账。返回结果是交易哈希。转账的nonce。每次转前需要调用<em><code>./nknc wallet --list nonce</code></em>命令来获取自己的nonce。如果使用远程节点，需要在nknc后面使用<em><code>--ip and --port</code></em>参数。</p>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> asset <span class="hljs-params">--transfer</span> -value 1  -to NKNBV71h5oUBjknMHPikPU7nraw9KtksWjtB <span class="hljs-params">--wallet</span> wallet.dat <span class="hljs-params">--fee</span> 0 <span class="hljs-params">--nonce</span> 0
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: <span class="hljs-string">"451a79a7e2e3aa0db0a856323575b7b371b098e6a3e6385b87dec5531314b3c3"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="钱包"></a><a href="#钱包" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>钱包</h2>
+<p>用于操作钱包的命令。</p>
+<pre><code class="hljs">NAME:
+   nknc wallet - user wallet operation
+
+USAGE:
+   nknc wallet [command options] [args]
+
+DESCRIPTION:
+   With nknc wallet, you could control your asset.
+
+OPTIONS:
+   --<span class="hljs-keyword">create</span>, -c                <span class="hljs-keyword">create</span> wallet
+   --list <span class="hljs-keyword">value</span>, -l <span class="hljs-keyword">value</span>      list wallet information [account, balance, verbose, nonce]
+   --changepassword            change wallet <span class="hljs-keyword">password</span>
+   --reset                     reset wallet
+   --name <span class="hljs-keyword">value</span>, -n <span class="hljs-keyword">value</span>      wallet name (default: <span class="hljs-string">"wallet.dat"</span>)
+   --<span class="hljs-keyword">password</span> <span class="hljs-keyword">value</span>, -p <span class="hljs-keyword">value</span>  wallet <span class="hljs-keyword">password</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="创建钱包"></a><a href="#创建钱包" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创建钱包</h3>
+<p>创建钱包。可以指定钱包名称。</p>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> wallet <span class="hljs-params">--name</span> myWallet.json <span class="hljs-params">--create</span>
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">Address                             Public Key
+-------                             ----------
+<span class="hljs-symbol">NKNBsm5</span>t<span class="hljs-number">2</span>eRj<span class="hljs-number">4</span>ijSw<span class="hljs-name">M1</span>Sw<span class="hljs-number">9</span>jGtArTqCDu<span class="hljs-symbol">n77</span>Z  <span class="hljs-number">04</span>c<span class="hljs-number">0</span>dc<span class="hljs-number">08</span>aa<span class="hljs-number">609929</span>d<span class="hljs-number">4440</span>b<span class="hljs-number">8690052</span>f<span class="hljs-number">85</span>b<span class="hljs-number">09</span>ab<span class="hljs-number">24</span>cba<span class="hljs-number">82</span>a<span class="hljs-number">507</span>e<span class="hljs-number">14</span>ae<span class="hljs-number">3</span>c<span class="hljs-number">5503694759</span>e
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="查询钱包"></a><a href="#查询钱包" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>查询钱包</h3>
+<p>查询钱包相关的信息。如果使用远程节点，需要在nknc后面使用<em><code>--ip and --port</code></em>参数。</p>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> wallet <span class="hljs-params">--list</span> account
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">Address                             Public Key
+-------                             ----------
+<span class="hljs-symbol">NKNBsm5</span>t<span class="hljs-number">2</span>eRj<span class="hljs-number">4</span>ijSw<span class="hljs-name">M1</span>Sw<span class="hljs-number">9</span>jGtArTqCDu<span class="hljs-symbol">n77</span>Z  <span class="hljs-number">04</span>c<span class="hljs-number">0</span>dc<span class="hljs-number">08</span>aa<span class="hljs-number">609929</span>d<span class="hljs-number">4440</span>b<span class="hljs-number">8690052</span>f<span class="hljs-number">85</span>b<span class="hljs-number">09</span>ab<span class="hljs-number">24</span>cba<span class="hljs-number">82</span>a<span class="hljs-number">507</span>e<span class="hljs-number">14</span>ae<span class="hljs-number">3</span>c<span class="hljs-number">5503694759</span>e
+</code></pre>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> wallet <span class="hljs-params">--list</span> balance
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"amount"</span>: <span class="hljs-string">"0"</span>
+    }
+}
+</code></pre>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> wallet <span class="hljs-params">--list</span> verbose 
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">Password:
+Address                             Public Key
+<span class="hljs-bullet">-------                             </span>----------
+NKNZmZfWwYDhNGjFLZwJPQPKNf6o6kS45isW  044473fb05fc7a3c4c882150a02a505626a7531b1aeac15c5993835636cb452051
+
+<span class="hljs-section">Private Key
+-----------</span>
+<span class="hljs-bullet">...
+</span></code></pre>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> wallet <span class="hljs-params">--list</span> nonce
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+    <span class="hljs-attr">"jsonrpc"</span>: <span class="hljs-string">"2.0"</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"currentHeight"</span>: <span class="hljs-number">5850</span>,
+        <span class="hljs-attr">"nonce"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"nonceInTxPool"</span>: <span class="hljs-number">0</span>
+
+    }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="更改密码"></a><a href="#更改密码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>更改密码</h3>
+<p>修改钱包密码。</p>
+<p>命令:</p>
+<pre><code class="hljs"><span class="hljs-string">./nknc</span> wallet <span class="hljs-params">--name</span> myWallet.dat <span class="hljs-params">--changepassword</span>
+</code></pre>
+<p>执行结果:</p>
+<pre><code class="hljs"><span class="hljs-attribute">passwrod changed</span>
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#contents">Contents</a></li><li><a href="#帮助">帮助</a></li><li><a href="#版本">版本</a></li><li><a href="#区块链信息">区块链信息</a><ul class="toc-headings"><li><a href="#查询区块">查询区块</a></li><li><a href="#查询交易">查询交易</a></li><li><a href="#查询当前区块哈希">查询当前区块哈希</a></li><li><a href="#查询当前总区块数">查询当前总区块数</a></li><li><a href="#查询节点连接信息">查询节点连接信息</a></li><li><a href="#查询节点状态">查询节点状态</a></li><li><a href="#查询节点邻居">查询节点邻居</a></li><li><a href="#查询chord邻居信息">查询chord邻居信息</a></li><li><a href="#查询节点版本">查询节点版本</a></li><li><a href="#查询余额">查询余额</a></li><li><a href="#查询当前nonce">查询当前nonce</a></li></ul></li><li><a href="#资产管理">资产管理</a><ul class="toc-headings"><li><a href="#转账">转账</a></li></ul></li><li><a href="#钱包">钱包</a><ul class="toc-headings"><li><a href="#创建钱包">创建钱包</a></li><li><a href="#查询钱包">查询钱包</a></li><li><a href="#更改密码">更改密码</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><img src="/img/favicon.png" alt="Bowler" height="45"/><a href="https://nkn.org">NKN</a><a href="https://twitter.com/NKN_ORG">Twitter</a><a href="https://github.com/nknorg/nkn">GitHub</a><a href="https://forum.nkn.org">Forum</a></section><section class="copyright">Copyright © 2025 NKN | All rights reserved</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '4a0261289a8269108860d1988a7e48f6',
+                indexName: 'nkn',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>

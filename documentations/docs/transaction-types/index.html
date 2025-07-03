@@ -1,0 +1,400 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Transaction Types · NKN Docs</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Transaction Architecture"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Transaction Types · NKN Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.nkn.org/"/><meta property="og:description" content="## Transaction Architecture"/><meta property="og:image" content="https://docs.nkn.org/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.nkn.org/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/favicon.png" alt="NKN Docs"/><h2 class="headerTitleWithLogo">NKN Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/home" target="_self">Docs</a></li><li class=""><a href="/docs/command-line-wallet-cn" target="_self">文档</a></li><li class=""><a href="https://github.com/nknorg/nkn" target="_self">GitHub</a></li><li class=""><a href="https://nkn.org" target="_self">NKN</a></li><li class=""><a href="https://github.com/nknorg/nkn/wiki" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Protocol</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Home<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/home">Welcome</a></li><li class="navListItem"><a class="navItem" href="/docs/get-started">Get Started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API Reference<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/jsonrpc-api-reference">JsonRPC API Reference</a></li><li class="navListItem"><a class="navItem" href="/docs/command-line-wallet">Command Line Wallet</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Protocol<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/nkn-session-protocol">NKN Session Protocol</a></li><li class="navListItem"><a class="navItem" href="/docs/client-address-scheme">NKN Client Address Scheme</a></li><li class="navListItem"><a class="navItem" href="/docs/wallet-address-scheme">NKN Wallet Address Scheme</a></li><li class="navListItem"><a class="navItem" href="/docs/wallet-json-format">NKN Wallet JSON Format (v2)</a></li><li class="navListItem"><a class="navItem" href="/docs/serialization-scheme">Serialization Scheme</a></li><li class="navListItem"><a class="navItem" href="/docs/signature-chain">Signature Chain</a></li><li class="navListItem"><a class="navItem" href="/docs/d-chat-message-scheme">NKN D-Chat Message Scheme</a></li><li class="navListItem"><a class="navItem" href="/docs/nkn-sdk-resolver">NKN SDK resolver protocol</a></li><li class="navListItem"><a class="navItem" href="/docs/client-authorization">NKN Client Authorization</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/transaction-types">Transaction Types</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">SDK<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/nkn-sdk-js">JavaScript SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/nkn-sdk-go">Go SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/nkn-sdk-gomobile">iOS/Android SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/nkn-sdk-java">Java SDK</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">nConnect<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/nconnect-overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-get-started">Get Started</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-install-binary-release">Install nConnect Binary Release</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-build-from-source">Build nConnect from Source</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-knowledge-base">nConnect Knowledge Base</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-tuna">nConnect over Tuna, Getting Faster</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-remote-desktop">Remote Desktop</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-nas">nConnect for NAS</a></li><li class="navListItem"><a class="navItem" href="/docs/nconnect-faq">nConnect FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Transaction Types</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="transaction-architecture"></a><a href="#transaction-architecture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Transaction Architecture</h2>
+<h3><a class="anchor" aria-hidden="true" id="core-structure"></a><a href="#core-structure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Core Structure</h3>
+<pre><code class="hljs css language-go"><span class="hljs-keyword">type</span> Transaction <span class="hljs-keyword">struct</span> {
+    UnsignedTx *UnsignedTx  <span class="hljs-comment">// Transaction data</span>
+    Programs   []*Program   <span class="hljs-comment">// Signature programs</span>
+}
+
+<span class="hljs-keyword">type</span> UnsignedTx <span class="hljs-keyword">struct</span> {
+    Payload    Payload      <span class="hljs-comment">// Transaction payload (determines type)</span>
+    Nonce      <span class="hljs-keyword">uint64</span>       <span class="hljs-comment">// Random nonce for uniqueness</span>
+    Fee        Fixed64      <span class="hljs-comment">// Transaction fee</span>
+    Attributes []<span class="hljs-keyword">byte</span>       <span class="hljs-comment">// Additional attributes</span>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="payload-types"></a><a href="#payload-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Payload Types</h3>
+<p>All transaction types are defined by the <code>PayloadType</code> enum in the Protocol Buffer definitions:</p>
+<h2><a class="anchor" aria-hidden="true" id="transaction-types"></a><a href="#transaction-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Transaction Types</h2>
+<h3><a class="anchor" aria-hidden="true" id="1-coinbase_type-0"></a><a href="#1-coinbase_type-0" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. COINBASE_TYPE (0)</h3>
+<p><strong>Purpose</strong>: Mining rewards and token distribution to miners.</p>
+<p><strong>Structure</strong>:</p>
+<pre><code class="hljs css language-protobuf"><span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">Coinbase</span> </span>{
+    <span class="hljs-built_in">bytes</span> sender = <span class="hljs-number">1</span>;      <span class="hljs-comment">// Donation address (must be specific address)</span>
+    <span class="hljs-built_in">bytes</span> recipient = <span class="hljs-number">2</span>;   <span class="hljs-comment">// Miner's address</span>
+    <span class="hljs-built_in">int64</span> amount = <span class="hljs-number">3</span>;      <span class="hljs-comment">// Reward amount</span>
+}
+</code></pre>
+<p><strong>Key Features</strong>:</p>
+<ul>
+<li>No signature verification required</li>
+<li>Automatically generated for each block</li>
+<li>Sender must be the donation address (<code>NKNaaaaaaaaaaaaaaaaaaaaaaaaaaaeJ6gxa</code>)</li>
+<li>Amount is calculated based on block height and reward schedule</li>
+</ul>
+<p><strong>Usage</strong>: Created automatically by the mining process.</p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="2-transfer_asset_type-1"></a><a href="#2-transfer_asset_type-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. TRANSFER_ASSET_TYPE (1)</h3>
+<p><strong>Purpose</strong>: Standard token transfers between addresses.</p>
+<p><strong>Structure</strong>:</p>
+<pre><code class="hljs css language-protobuf"><span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">TransferAsset</span> </span>{
+    <span class="hljs-built_in">bytes</span> sender = <span class="hljs-number">1</span>;      <span class="hljs-comment">// From address (20 bytes)</span>
+    <span class="hljs-built_in">bytes</span> recipient = <span class="hljs-number">2</span>;   <span class="hljs-comment">// To address (20 bytes)</span>
+    <span class="hljs-built_in">int64</span> amount = <span class="hljs-number">3</span>;      <span class="hljs-comment">// Transfer amount (in base units)</span>
+}
+</code></pre>
+<p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Amount must be positive</li>
+<li>Sender must have sufficient balance</li>
+<li>Addresses must be valid 20-byte script hashes</li>
+<li>Cannot transfer zero amounts (height-dependent rule)</li>
+</ul>
+<p><strong>Builder Function</strong>:</p>
+<pre><code class="hljs css language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewTransferAssetTransaction</span><span class="hljs-params">(sender, recipient common.Uint160, amount common.Fixed64)</span> *<span class="hljs-title">Transaction</span></span>
+</code></pre>
+<p><strong>Fee</strong>: Standard transaction fee applies.</p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="3-sig_chain_txn_type-2"></a><a href="#3-sig_chain_txn_type-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. SIG_CHAIN_TXN_TYPE (2)</h3>
+<p><strong>Purpose</strong>: Submit signature chains for Proof of Relay consensus mechanism.</p>
+<p><strong>Structure</strong>:</p>
+<pre><code class="hljs css language-protobuf"><span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">SigChainTxn</span> </span>{
+    <span class="hljs-built_in">bytes</span> sig_chain = <span class="hljs-number">1</span>;   <span class="hljs-comment">// Serialized signature chain</span>
+    <span class="hljs-built_in">bytes</span> submitter = <span class="hljs-number">2</span>;   <span class="hljs-comment">// Address of submitter</span>
+}
+</code></pre>
+<p><strong>Key Features</strong>:</p>
+<ul>
+<li>Critical for NKN's Proof of Relay consensus</li>
+<li>Validates data relay work performed by nodes</li>
+<li>Contains cryptographic proof of message routing</li>
+<li>Enables mining rewards based on relay contributions</li>
+</ul>
+<p><strong>Validation</strong>:</p>
+<ul>
+<li>Signature chain must be valid</li>
+<li>Submitter must be authorized</li>
+<li>Chain must follow proper cryptographic verification</li>
+</ul>
+<p><strong>Builder Function</strong>:</p>
+<pre><code class="hljs css language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewSigChainTransaction</span><span class="hljs-params">(sigChain []<span class="hljs-keyword">byte</span>, submitter common.Uint160)</span> *<span class="hljs-title">Transaction</span></span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="4-register_name_type-3"></a><a href="#4-register_name_type-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. REGISTER_NAME_TYPE (3)</h3>
+<p><strong>Purpose</strong>: Register human-readable names in the NKN name service.</p>
+<p><strong>Structure</strong>:</p>
+<pre><code class="hljs css language-protobuf"><span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">RegisterName</span> </span>{
+    <span class="hljs-built_in">bytes</span> registrant = <span class="hljs-number">1</span>;       <span class="hljs-comment">// Public key of registrant (33 bytes)</span>
+    <span class="hljs-built_in">string</span> name = <span class="hljs-number">2</span>;            <span class="hljs-comment">// Name to register</span>
+    <span class="hljs-built_in">int64</span> registration_fee = <span class="hljs-number">3</span>; <span class="hljs-comment">// Fee for registration</span>
+}
+</code></pre>
+<p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Name must match regex pattern (height-dependent):
+<ul>
+<li>Current: <code>^[A-Za-z0-9][A-Za-z0-9-_.+]{2,254}$</code></li>
+<li>Legacy: <code>^[A-Za-z][A-Za-z0-9-_.+]{2,254}$</code></li>
+</ul></li>
+<li>Minimum registration fee: 10 NKN</li>
+<li>Name must not already be registered</li>
+<li>Registrant must be valid 33-byte public key</li>
+</ul>
+<p><strong>Name Duration</strong>: Default 1 year (configurable)</p>
+<p><strong>Builder Function</strong>:</p>
+<pre><code class="hljs css language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewRegisterNameTransaction</span><span class="hljs-params">(registrant []<span class="hljs-keyword">byte</span>, name <span class="hljs-keyword">string</span>, registrationFee common.Fixed64)</span> *<span class="hljs-title">Transaction</span></span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="5-transfer_name_type-4"></a><a href="#5-transfer_name_type-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. TRANSFER_NAME_TYPE (4)</h3>
+<p><strong>Purpose</strong>: Transfer ownership of registered names.</p>
+<p><strong>Structure</strong>:</p>
+<pre><code class="hljs css language-protobuf"><span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">TransferName</span> </span>{
+    <span class="hljs-built_in">bytes</span> registrant = <span class="hljs-number">1</span>;   <span class="hljs-comment">// Current owner's public key</span>
+    <span class="hljs-built_in">bytes</span> recipient = <span class="hljs-number">2</span>;    <span class="hljs-comment">// New owner's public key</span>
+    <span class="hljs-built_in">string</span> name = <span class="hljs-number">3</span>;        <span class="hljs-comment">// Name being transferred</span>
+}
+</code></pre>
+<p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Name must be currently registered to the registrant</li>
+<li>Both registrant and recipient must be valid public keys</li>
+<li>Name must not be expired</li>
+<li>Only current owner can transfer</li>
+</ul>
+<p><strong>Builder Function</strong>:</p>
+<pre><code class="hljs css language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewTransferNameTransaction</span><span class="hljs-params">(registrant, recipient []<span class="hljs-keyword">byte</span>, name <span class="hljs-keyword">string</span>)</span> *<span class="hljs-title">Transaction</span></span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="6-delete_name_type-5"></a><a href="#6-delete_name_type-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6. DELETE_NAME_TYPE (5)</h3>
+<p><strong>Purpose</strong>: Delete registered names from the system.</p>
+<p><strong>Structure</strong>:</p>
+<pre><code class="hljs css language-protobuf"><span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">DeleteName</span> </span>{
+    <span class="hljs-built_in">bytes</span> registrant = <span class="hljs-number">1</span>;   <span class="hljs-comment">// Owner's public key</span>
+    <span class="hljs-built_in">string</span> name = <span class="hljs-number">2</span>;        <span class="hljs-comment">// Name to delete</span>
+}
+</code></pre>
+<p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Name must be currently registered to the registrant</li>
+<li>Only current owner can delete</li>
+<li>Name becomes available for re-registration after deletion</li>
+</ul>
+<p><strong>Builder Function</strong>:</p>
+<pre><code class="hljs css language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewDeleteNameTransaction</span><span class="hljs-params">(registrant []<span class="hljs-keyword">byte</span>, name <span class="hljs-keyword">string</span>)</span> *<span class="hljs-title">Transaction</span></span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="7-subscribe_type-6"></a><a href="#7-subscribe_type-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7. SUBSCRIBE_TYPE (6)</h3>
+<p><strong>Purpose</strong>: Subscribe to pub/sub topics for decentralized messaging.</p>
+<p><strong>Structure</strong>:</p>
+<pre><code class="hljs css language-protobuf"><span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">Subscribe</span> </span>{
+    <span class="hljs-built_in">bytes</span> subscriber = <span class="hljs-number">1</span>;    <span class="hljs-comment">// Subscriber's public key</span>
+    <span class="hljs-built_in">string</span> identifier = <span class="hljs-number">2</span>;   <span class="hljs-comment">// Unique client identifier</span>
+    <span class="hljs-built_in">string</span> topic = <span class="hljs-number">3</span>;        <span class="hljs-comment">// Topic to subscribe to</span>
+    <span class="hljs-built_in">uint32</span> duration = <span class="hljs-number">4</span>;     <span class="hljs-comment">// Subscription duration (blocks)</span>
+    <span class="hljs-built_in">string</span> meta = <span class="hljs-number">5</span>;         <span class="hljs-comment">// Additional metadata</span>
+    <span class="hljs-built_in">uint32</span> bucket = <span class="hljs-number">6</span>;       <span class="hljs-comment">// Subscription bucket</span>
+}
+</code></pre>
+<p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Topic must match regex pattern (height-dependent)</li>
+<li>Duration limits (height-dependent):
+<ul>
+<li>Current: Max 400,000 blocks</li>
+<li>Legacy: Max 65,535 blocks</li>
+</ul></li>
+<li>Identifier max length: 64 characters (height-dependent)</li>
+<li>Meta max length: 1,024 characters (height-dependent)</li>
+<li>Bucket max value: 1,000 (height-dependent)</li>
+</ul>
+<p><strong>Builder Function</strong>:</p>
+<pre><code class="hljs css language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewSubscribeTransaction</span><span class="hljs-params">(subscriber []<span class="hljs-keyword">byte</span>, identifier, topic <span class="hljs-keyword">string</span>, duration <span class="hljs-keyword">uint32</span>, meta <span class="hljs-keyword">string</span>, bucket <span class="hljs-keyword">uint32</span>)</span> *<span class="hljs-title">Transaction</span></span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="8-unsubscribe_type-7"></a><a href="#8-unsubscribe_type-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>8. UNSUBSCRIBE_TYPE (7)</h3>
+<p><strong>Purpose</strong>: Unsubscribe from pub/sub topics.</p>
+<p><strong>Structure</strong>:</p>
+<pre><code class="hljs css language-protobuf"><span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">Unsubscribe</span> </span>{
+    <span class="hljs-built_in">bytes</span> subscriber = <span class="hljs-number">1</span>;    <span class="hljs-comment">// Subscriber's public key</span>
+    <span class="hljs-built_in">string</span> identifier = <span class="hljs-number">2</span>;   <span class="hljs-comment">// Client identifier</span>
+    <span class="hljs-built_in">string</span> topic = <span class="hljs-number">3</span>;        <span class="hljs-comment">// Topic to unsubscribe from</span>
+}
+</code></pre>
+<p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Must have active subscription to unsubscribe</li>
+<li>Subscriber, identifier, and topic must match existing subscription</li>
+</ul>
+<p><strong>Builder Function</strong>:</p>
+<pre><code class="hljs css language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewUnsubscribeTransaction</span><span class="hljs-params">(subscriber []<span class="hljs-keyword">byte</span>, identifier, topic <span class="hljs-keyword">string</span>)</span> *<span class="hljs-title">Transaction</span></span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="9-generate_id_type-8"></a><a href="#9-generate_id_type-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>9. GENERATE_ID_TYPE (8)</h3>
+<p><strong>Purpose</strong>: Generate node IDs for network participation.</p>
+<p><strong>Structure</strong>:</p>
+<pre><code class="hljs css language-protobuf"><span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">GenerateID</span> </span>{
+    <span class="hljs-built_in">bytes</span> public_key = <span class="hljs-number">1</span>;        <span class="hljs-comment">// Node's public key (33 bytes)</span>
+    <span class="hljs-built_in">bytes</span> sender = <span class="hljs-number">2</span>;            <span class="hljs-comment">// Optional sender address</span>
+    <span class="hljs-built_in">int64</span> registration_fee = <span class="hljs-number">3</span>;  <span class="hljs-comment">// Fee for ID generation</span>
+    <span class="hljs-built_in">uint32</span> version = <span class="hljs-number">4</span>;          <span class="hljs-comment">// ID version</span>
+}
+</code></pre>
+<p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Complex validation with version checks</li>
+<li>Registration fee requirements (height-dependent)</li>
+<li>Public key must be valid 33-byte compressed key</li>
+<li>Version must be within allowed range (height-dependent)</li>
+<li>Rate limiting based on transaction hash</li>
+</ul>
+<p><strong>Height-Dependent Rules</strong>:</p>
+<ul>
+<li>Minimum registration fee: 10 NKN (from block 2,570,000)</li>
+<li>Sender validation (from block 2,570,000)</li>
+<li>Version restrictions vary by block height</li>
+</ul>
+<p><strong>Builder Function</strong>:</p>
+<pre><code class="hljs css language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewGenerateIDTransaction</span><span class="hljs-params">(publicKey []<span class="hljs-keyword">byte</span>, sender common.Uint160, registrationFee common.Fixed64, version <span class="hljs-keyword">uint32</span>)</span> *<span class="hljs-title">Transaction</span></span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="10-nano_pay_type-9"></a><a href="#10-nano_pay_type-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>10. NANO_PAY_TYPE (9)</h3>
+<p><strong>Purpose</strong>: Fast micropayments with payment channels and expiration.</p>
+<p><strong>Structure</strong>:</p>
+<pre><code class="hljs css language-protobuf"><span class="hljs-class"><span class="hljs-keyword">message</span> <span class="hljs-title">NanoPay</span> </span>{
+    <span class="hljs-built_in">bytes</span> sender = <span class="hljs-number">1</span>;                <span class="hljs-comment">// From address</span>
+    <span class="hljs-built_in">bytes</span> recipient = <span class="hljs-number">2</span>;             <span class="hljs-comment">// To address</span>
+    <span class="hljs-built_in">uint64</span> id = <span class="hljs-number">3</span>;                   <span class="hljs-comment">// Unique payment ID</span>
+    <span class="hljs-built_in">int64</span> amount = <span class="hljs-number">4</span>;                <span class="hljs-comment">// Payment amount</span>
+    <span class="hljs-built_in">uint32</span> txn_expiration = <span class="hljs-number">5</span>;       <span class="hljs-comment">// Transaction expiration height</span>
+    <span class="hljs-built_in">uint32</span> nano_pay_expiration = <span class="hljs-number">6</span>;  <span class="hljs-comment">// Payment channel expiration</span>
+}
+</code></pre>
+<p><strong>Key Features</strong>:</p>
+<ul>
+<li>Designed for high-frequency micropayments</li>
+<li>Payment channel mechanism for efficiency</li>
+<li>Dual expiration system (transaction and channel)</li>
+<li>Fee charging rules (height-dependent)</li>
+</ul>
+<p><strong>Validation Rules</strong>:</p>
+<ul>
+<li>Amount must be positive</li>
+<li>Expiration heights must be valid</li>
+<li>Sender must have sufficient balance</li>
+<li>ID must be unique for the sender-recipient pair</li>
+</ul>
+<p><strong>Builder Function</strong>:</p>
+<pre><code class="hljs css language-go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewNanoPayTransaction</span><span class="hljs-params">(sender, recipient common.Uint160, id <span class="hljs-keyword">uint64</span>, amount common.Fixed64, txnExpiration, nanoPayExpiration <span class="hljs-keyword">uint32</span>)</span> *<span class="hljs-title">Transaction</span></span>
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="transaction-fees"></a><a href="#transaction-fees" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Transaction Fees</h2>
+<h3><a class="anchor" aria-hidden="true" id="fee-structure"></a><a href="#fee-structure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fee Structure</h3>
+<ul>
+<li><strong>Standard Fee</strong>: Based on transaction size and network conditions</li>
+<li><strong>Low Fee Transactions</strong>: Special handling for small transactions</li>
+<li><strong>Fee Calculation</strong>: Measured in NKN base units (10^-8 NKN)</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="fee-rules"></a><a href="#fee-rules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fee Rules</h3>
+<ul>
+<li>Minimum fee requirements vary by transaction type</li>
+<li>Some transactions (like name registration) have mandatory minimum fees</li>
+<li>Nano pay transactions may be exempt from fees (height-dependent)</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="transaction-validation"></a><a href="#transaction-validation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Transaction Validation</h2>
+<h3><a class="anchor" aria-hidden="true" id="common-validation-rules"></a><a href="#common-validation-rules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Common Validation Rules</h3>
+<ol>
+<li><strong>Signature Verification</strong>: All non-coinbase transactions must have valid signatures</li>
+<li><strong>Nonce Validation</strong>: Must be unique and properly formatted</li>
+<li><strong>Fee Validation</strong>: Must be non-negative and sufficient</li>
+<li><strong>Balance Validation</strong>: Sender must have sufficient balance for transfers</li>
+<li><strong>Format Validation</strong>: All fields must conform to expected formats</li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="height-dependent-rules"></a><a href="#height-dependent-rules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Height-Dependent Rules</h3>
+<p>Many validation rules change at specific block heights:</p>
+<ul>
+<li>Name registration patterns</li>
+<li>Subscription limits</li>
+<li>Fee requirements</li>
+<li>Version restrictions</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="usage-examples"></a><a href="#usage-examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage Examples</h2>
+<h3><a class="anchor" aria-hidden="true" id="creating-a-transfer-transaction"></a><a href="#creating-a-transfer-transaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a Transfer Transaction</h3>
+<pre><code class="hljs css language-go"><span class="hljs-comment">// Transfer 1 NKN from sender to recipient</span>
+sender := common.Uint160{...}      <span class="hljs-comment">// 20-byte address</span>
+recipient := common.Uint160{...}   <span class="hljs-comment">// 20-byte address</span>
+amount := common.Fixed64(<span class="hljs-number">100000000</span>) <span class="hljs-comment">// 1 NKN in base units</span>
+
+txn := NewTransferAssetTransaction(sender, recipient, amount)
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="registering-a-name"></a><a href="#registering-a-name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Registering a Name</h3>
+<pre><code class="hljs css language-go"><span class="hljs-comment">// Register name "alice" with public key</span>
+publicKey := []<span class="hljs-keyword">byte</span>{...}           <span class="hljs-comment">// 33-byte compressed public key</span>
+name := <span class="hljs-string">"alice"</span>
+fee := common.Fixed64(<span class="hljs-number">1000000000</span>)  <span class="hljs-comment">// 10 NKN registration fee</span>
+
+txn := NewRegisterNameTransaction(publicKey, name, fee)
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="subscribing-to-a-topic"></a><a href="#subscribing-to-a-topic" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Subscribing to a Topic</h3>
+<pre><code class="hljs css language-go"><span class="hljs-comment">// Subscribe to topic "chat.general" for 1000 blocks</span>
+publicKey := []<span class="hljs-keyword">byte</span>{...}           <span class="hljs-comment">// 33-byte compressed public key</span>
+identifier := <span class="hljs-string">"client-001"</span>
+topic := <span class="hljs-string">"chat.general"</span>
+duration := <span class="hljs-keyword">uint32</span>(<span class="hljs-number">1000</span>)
+meta := <span class="hljs-string">""</span>
+bucket := <span class="hljs-keyword">uint32</span>(<span class="hljs-number">0</span>)
+
+txn := NewSubscribeTransaction(publicKey, identifier, topic, duration, meta, bucket)
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="protocol-buffer-definitions"></a><a href="#protocol-buffer-definitions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Protocol Buffer Definitions</h2>
+<p>All transaction types are defined in <code>/pb/transaction.proto</code> and compiled to Go code in <code>/pb/transaction.pb.go</code>. The payload system uses Protocol Buffers for:</p>
+<ul>
+<li>Type safety</li>
+<li>Efficient serialization</li>
+<li>Cross-platform compatibility</li>
+<li>Version management</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="related-files"></a><a href="#related-files" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Related Files</h2>
+<ul>
+<li><strong>Core Transaction Logic</strong>: <code>/transaction/transaction.go</code></li>
+<li><strong>Transaction Builders</strong>: <code>/transaction/txBuilder.go</code></li>
+<li><strong>Payload Management</strong>: <code>/transaction/payload.go</code></li>
+<li><strong>Protocol Definitions</strong>: <code>/pb/transaction.proto</code></li>
+<li><strong>Validation Rules</strong>: <code>/chain/txvalidator/txvalidator.go</code></li>
+<li><strong>Configuration</strong>: <code>/config/config.go</code></li>
+</ul>
+<hr>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/client-authorization"><span class="arrow-prev">← </span><span>NKN Client Authorization</span></a><a class="docs-next button" href="/docs/nkn-sdk-js"><span class="function-name-prevnext">JavaScript SDK</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#transaction-architecture">Transaction Architecture</a><ul class="toc-headings"><li><a href="#core-structure">Core Structure</a></li><li><a href="#payload-types">Payload Types</a></li></ul></li><li><a href="#transaction-types">Transaction Types</a><ul class="toc-headings"><li><a href="#1-coinbase_type-0">1. COINBASE_TYPE (0)</a></li><li><a href="#2-transfer_asset_type-1">2. TRANSFER_ASSET_TYPE (1)</a></li><li><a href="#3-sig_chain_txn_type-2">3. SIG_CHAIN_TXN_TYPE (2)</a></li><li><a href="#4-register_name_type-3">4. REGISTER_NAME_TYPE (3)</a></li><li><a href="#5-transfer_name_type-4">5. TRANSFER_NAME_TYPE (4)</a></li><li><a href="#6-delete_name_type-5">6. DELETE_NAME_TYPE (5)</a></li><li><a href="#7-subscribe_type-6">7. SUBSCRIBE_TYPE (6)</a></li><li><a href="#8-unsubscribe_type-7">8. UNSUBSCRIBE_TYPE (7)</a></li><li><a href="#9-generate_id_type-8">9. GENERATE_ID_TYPE (8)</a></li><li><a href="#10-nano_pay_type-9">10. NANO_PAY_TYPE (9)</a></li></ul></li><li><a href="#transaction-fees">Transaction Fees</a><ul class="toc-headings"><li><a href="#fee-structure">Fee Structure</a></li><li><a href="#fee-rules">Fee Rules</a></li></ul></li><li><a href="#transaction-validation">Transaction Validation</a><ul class="toc-headings"><li><a href="#common-validation-rules">Common Validation Rules</a></li><li><a href="#height-dependent-rules">Height-Dependent Rules</a></li></ul></li><li><a href="#usage-examples">Usage Examples</a><ul class="toc-headings"><li><a href="#creating-a-transfer-transaction">Creating a Transfer Transaction</a></li><li><a href="#registering-a-name">Registering a Name</a></li><li><a href="#subscribing-to-a-topic">Subscribing to a Topic</a></li></ul></li><li><a href="#protocol-buffer-definitions">Protocol Buffer Definitions</a></li><li><a href="#related-files">Related Files</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><img src="/img/favicon.png" alt="Bowler" height="45"/><a href="https://nkn.org">NKN</a><a href="https://twitter.com/NKN_ORG">Twitter</a><a href="https://github.com/nknorg/nkn">GitHub</a><a href="https://forum.nkn.org">Forum</a></section><section class="copyright">Copyright © 2025 NKN | All rights reserved</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '4a0261289a8269108860d1988a7e48f6',
+                indexName: 'nkn',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
