@@ -83,6 +83,14 @@ const siteConfig = {
       'https://buttons.github.io/buttons.js',
       'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
       '/js/code-blocks-buttons.js',
+      {
+        src: "https://dashboard.letmeexplain.ai/embed/lme_chatbot_widget.js", // LetMeExplain embed script
+        async: false,
+      },
+      {
+        src: "/js/enable_lme_chatbot.js", // Custom initialization script
+        defer: true,
+      },
   ],
   stylesheets: ['/css/code-block-buttons.css'],
 
